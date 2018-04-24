@@ -5,10 +5,19 @@ import Header from '../../components/UI/Header/Header'
 
 class Home extends Component
 {
+    openPictureBook=()=>
+    {
+        this.props.history.push('/picturebook')
+    }
+
     render()
     {
         return(<div>
-            <Header title='Home' imgStore='arrow2' />
+            <Header
+                title='Home'
+                imgStore='arrow2'
+                click={this.openPictureBook}
+            />
 
         </div>)
     }
