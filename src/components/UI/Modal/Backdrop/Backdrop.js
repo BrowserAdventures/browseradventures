@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components'
 
 
-const backdrop = (props) =>(props.show &&
-    <Wrapper show={props.show} onClick={props.close} />
+const backdrop = (props) =>(
+    props.show && <Wrapper show={props.show} onClick={props.close} />
 )
 
 

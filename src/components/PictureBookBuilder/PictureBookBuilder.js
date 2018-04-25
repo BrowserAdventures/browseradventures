@@ -3,52 +3,69 @@ import styled from 'styled-components';
 
 const PictureBookBuilder=(props)=>
 {
-    return(<Wrapper>
+    const books = props.books.map(self=> (
+    <Container key={self.id} onClick={()=> props.open(self)}>
+        <h3>{self.title}</h3>
         <img
-            src={props.src || images[props.imgStore]}
-            onClick={props.backButtonClicked}
-            rotate={props.back}
+            src={self.url}
             alt=''
         />
-        <div onClick={props.click}><h3>{props.title}</h3></div>
-        <img
-            src={props.src || images[props.imgStore]}
-            onClick={props.nextButtonClicked}
-            rotate={props.next}
-            alt=''
-        />
-    </Wrapper>)
+        <div>Delete</div>
+    </Container>))
+
+    return <Wrapper>{books}</Wrapper>;
 }
 
-
 const Wrapper = styled.div`
-    background: rgba(0,0,0, 0.7);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     width: 100%;
-    height: 60px;
-    display: grid;
-    grid-template-columns: 60px 1fr 60px;
+`
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(0,0,0, 0.3);
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0, 0.4);
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    padding:  0 10px;
+    margin-bottom: 20px;
+
+    :hover {
+        cursor: pointer;
+        background: rgba(0,0,0, 0.5);
+    }
 
     img {
-        width: 60px;
-        height: 100%;
-        ${props=> props.rotate === props.back && 'transform: rotate(95deg)'};
-        ${props=> props.rotate === props.next && 'transform: rotate(-180deg)'};
+        width: 100%;
+        height: 250px;
+        border: 0px solid rgba(0,0,0, 0.2);
     }
     img:hover {
         cursor: pointer;
-        background: rgba(0,0,0, 0.1);
-
+        border: 0px solid rgba(0,0,0, 0.2);
     }
 
     div {
-        height: 100%;
-        text-align: center;
-        color: white;
+        height: 40px;
+        color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     div:hover {
-        color: rgb(65, 202, 244);
+        color: red;
         cursor: pointer;
-        background: rgba(0,0,0, 0.1);
+        background: rgba(0,0,0, 0.3);
+    }
+
+    h3 {
+
     }
 `
 

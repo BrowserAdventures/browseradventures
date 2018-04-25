@@ -6,13 +6,13 @@ import Backdrop from './Backdrop/Backdrop'
 
 
 const modal=(props)=> (<Transition
-          in={props.show}
-          timeout={500}
-          mountOnEnter
-          unmountOnExit>
+    in={props.show}
+    timeout={500}
+    mountOnEnter
+    unmountOnExit>
     {state=> (<Fragment>
         <Container show={state}>
-            <h1>A Modal</h1>
+            {props.children}
         </Container>
         <Backdrop show={state} close={props.close} />
     </Fragment>)}
@@ -71,6 +71,9 @@ const Container = styled.div`
     width: 50%;
     transition: all 0.3s ease-out;
     animation: ${animate} 0.4s ease-out forwards;
+
+    display: flex;
+    justify-content: center;
 `
 
 export default modal;

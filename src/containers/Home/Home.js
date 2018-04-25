@@ -15,7 +15,7 @@ class Home extends Component
         return(<div>
             <Header
                 title='Home'
-                imgStore='arrow2'
+                imgStore='planetSpin'
                 click={this.openPictureBook}
             />
 
