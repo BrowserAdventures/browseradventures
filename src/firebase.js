@@ -13,7 +13,12 @@ firebase.initializeApp(config);
 export const database = firebase.database().ref('/picturebooks')
 
 
-export function db_bookPage(id)
+export const db_book=(id)=>
 {
-    firebase.database().ref(`/picturebooks/${id}`)
+    return firebase.database().ref(`/picturebooks/${id}`)
+}
+
+export const db_bookDescription=(book, description)=>
+{
+    return firebase.database().ref(`/picturebooks/${book}/${description}`)
 }

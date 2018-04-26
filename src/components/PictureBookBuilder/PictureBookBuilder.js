@@ -1,16 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const PictureBookBuilder=(props)=>
+const pictureBookBuilder=(props)=>
 {
     const books = props.books.map(self=> (
-    <Container key={self.id} onClick={()=> props.open(self)}>
+    <Container key={self.id}>
+        <span onClick={()=> props.open(self)}>
         <h3>{self.title}</h3>
         <img
             src={self.url}
             alt=''
         />
-        <div>Delete</div>
+        </span>
+        <div onClick={()=> props.delete(self.id)}>Delete</div>
     </Container>))
 
     return <Wrapper>{books}</Wrapper>;
@@ -21,6 +23,9 @@ const Wrapper = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
+`
+const Span = styled.span`
+
 `
 
 const Container = styled.div`
@@ -57,6 +62,7 @@ const Container = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
+
     }
     div:hover {
         color: red;
@@ -70,4 +76,4 @@ const Container = styled.div`
 `
 
 
-export default PictureBookBuilder;
+export default pictureBookBuilder;

@@ -1,4 +1,4 @@
-import {database} from '../../../../firebase'
+import {database, db_book} from '../../../../firebase'
 
 export const add_book=(book)=>
 {
@@ -7,6 +7,11 @@ export const add_book=(book)=>
 
         dispatch({type: 'SUBMIT'})
     }
+}
+
+export const delete_book=(id)=>
+{
+    return dispatch => db_book(id).remove()
 }
 
 export const get_books=()=>

@@ -1,30 +1,34 @@
-import {database, db_bookPage} from '../../../../firebase'
+import {database, db_book, db_bookDescription} from '../../../../firebase'
 
 export const add_description=(id, description)=>
 {
     return dispatch => {
-        db_bookPage.ref(id).push(description)
+        db_book(id).push({description: description})
 
         dispatch({type: 'SUBMIT'})
     }
 }
 
-// export const get_books=()=>
-// {
-//     return dispatch => database.on('value', (snapshot)=> {
-//         let books = snapshot.val();
-//         let booksArray = [];
-//         for (let self in books) {
-//             booksArray.push({
-//                 id: self,
-//                 title: books[self].title,
-//                 url: books[self].url
-//             });
-//         }
-//         dispatch({
-//             type: 'GET_BOOKS',
-//             books: booksArray
-//         })
-//     })
-//
-// }
+export const delete_description=(book, description)=>
+{
+    return dispatch => db_bookDescription(book, description).remove()
+}
+
+export const get_descriptions=(id)=>
+{
+    return dispatch => db_book(id).on('value', (snapshot)=> {
+        let descriptions = snapshot.val();
+        let updateDescriptions = [];
+        for (let self in descriptions) {
+            updateDescriptions.push({
+                id: self,
+                description: descriptions[self].description,
+            });
+        }
+        dispatch({
+            type: 'GET_DESCRIPTIONS',
+            descriptions: updateDescriptions
+        })
+    })
+
+}

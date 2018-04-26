@@ -50,6 +50,7 @@ class PictureBook extends Component
             <PictureBookBuilder
                 books={this.props.books}
                 open={this.openBook}
+                delete={this.props.deleteBook}
             />
         </div>)
     }
@@ -74,6 +75,7 @@ const mapDispatchToProps=(dispatch)=>
         inputURL: (input)=> dispatch({type: 'URL', url: input}),
         addBook: (title, url)=> dispatch(actions.add_book({title: title, url: url})),
         getBooks: ()=> dispatch(actions.get_books()),
+        deleteBook: (id)=> dispatch(actions.delete_book(id)),
     }
 }
 

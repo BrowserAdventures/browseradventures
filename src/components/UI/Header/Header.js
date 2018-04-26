@@ -35,6 +35,7 @@ const Wrapper = styled.div`
     background: rgba(0,0,0, 0.7);
     width: 100%;
     height: 60px;
+    margin-bottom: 20px;
     display: grid;
     grid-template-columns: 60px 1fr 60px;
 

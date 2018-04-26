@@ -23,7 +23,7 @@ const bookPageReducer=(state = initialState, action)=>
         case('GET_DESCRIPTIONS'):
         return{
             ...state,
-            books: action.books
+            descriptions: action.descriptions
         }
 
         default: return state;

@@ -1,19 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const PictureBookBuilder=(props)=>
+const bookPageBuilder=(props)=>
 {
-    const books = props.books.map(self=> (
-    <Container key={self.id} onClick={()=> props.open(self)}>
-        <h3>{self.title}</h3>
-        <img
-            src={self.url}
-            alt=''
-        />
-        <div>Delete</div>
+    const descriptions = props.descriptions.filter(self=> (
+        self.id !== 'title' && self.id !== 'url'
+    )).map(self=> (
+    <Container key={self.id}>
+        <p>{self.description}</p>
+        <div onClick={()=> props.delete(self.id)}>X</div>
     </Container>))
 
-    return <Wrapper>{books}</Wrapper>;
+    return <Wrapper>{descriptions}</Wrapper>;
 }
 
 const Wrapper = styled.div`
@@ -31,7 +29,6 @@ const Container = styled.div`
     border-radius: 5px;
     border: 1px solid rgba(0,0,0, 0.4);
     width: 300px;
-    height: 350px;
     text-align: center;
     padding:  0 10px;
     margin-bottom: 20px;
@@ -52,7 +49,7 @@ const Container = styled.div`
     }
 
     div {
-        height: 40px;
+        height: 20px;
         color: transparent;
         display: flex;
         flex-direction: column;
@@ -70,4 +67,4 @@ const Container = styled.div`
 `
 
 
-export default PictureBookBuilder;
+export default bookPageBuilder;

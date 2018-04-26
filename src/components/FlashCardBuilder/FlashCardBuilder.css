@@ -1,0 +1,35 @@
+.flip {
+    width: 240px;
+    height: 300px;
+    float: left;
+
+}
+.flip .front {
+    background: #2980b9;
+    border-radius: 7px;
+    border: 1px solid black;
+    position: absolute;
+    transform: perspective(600px) rotateY(0deg);
+    width: 240px;
+    height: 300px;
+    backface-visibility: hidden;
+    transition: transform 0.5s linear 0s;
+}
+.flip:hover .front {
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.flip .back {
+    background: #27ae60;
+    border-radius: 7px;
+    border: 1px solid black;
+    position: absolute;
+    transform: perspective(600px) rotateY(180deg);
+    width: 240px;
+    height: 300px;
+    backface-visibility: hidden;
+    transition: transform 0.5s linear 0s;
+}
+.flip:hover .back {
+    transform: perspective(600px) rotateY(0deg);
+}

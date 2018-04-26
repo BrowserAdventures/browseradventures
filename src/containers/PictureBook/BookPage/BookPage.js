@@ -7,37 +7,46 @@ import Header from '../../../components/UI/Header/Header'
 import Modal from '../../../components/UI/Modal/Modal'
 
 import BookPageForm from '../../../components/PictureBookBuilder/BookPageBuilder/BookPageForm'
-//import PictureBookBuilder from '../../components/PictureBookBuilder/PictureBookBuilder'
+import BookPageBuilder from '../../../components/PictureBookBuilder/BookPageBuilder/BookPageBuilder'
 
 
 class BookPage extends Component
 {
     componentWillMount()
     {
+        this.passedState = this.props.location.state;
         this.setState({modal: false})
+        this.props.getDescriptions(this.passedState.id)
     }
 
     submit=(description)=>
     {
-        const passedState = this.props.location.state;
-        this.props.addDescription(passedState.id, description)
+        this.props.addDescription(this.passedState.id, description)
         this.setState({modal: false})
+    }
+
+    delete=(id)=>
+    {
+        this.props.deleteDescription(this.passedState.id, id)
     }
 
     render()
     {
         return(<div>
-            <Header title='Book Page' imgStore='arrow2'
+            <Header title={this.passedState.title} imgStore='arrow2'
                 backButtonClicked={()=> this.props.history.push('/picturebook')}
                 click={()=> this.setState({modal:true})}
             />
             <Modal show={this.state.modal} close={()=> this.setState({modal:false})}>
-
+                <BookPageForm
+                    description={this.props.description}
+                    onChange={this.props.inputDescription}
+                    submit={this.submit}
+                />
             </Modal>
-            <BookPageForm
-                description={this.props.description}
-                onChange={this.props.inputDescription}
-                submit={this.submit}
+            <BookPageBuilder
+                descriptions={this.props.descriptions}
+                delete={this.delete}
             />
         </div>)
     }
@@ -46,10 +55,11 @@ class BookPage extends Component
 
 const mapStateToProps=(state)=>
 {
-    const {description} = state.bookPageReducer
+    const {description, descriptions} = state.bookPageReducer
 
     return{
         description: description,
+        descriptions: descriptions,
     }
 }
 
@@ -57,7 +67,9 @@ const mapDispatchToProps=(dispatch)=>
 {
     return{
         inputDescription: (input)=> dispatch({type: 'DESCRIPTION', description: input}),
-        addDescription: (id, input)=> dispatch(actions.add_description(id, input))
+        addDescription: (id, input)=> dispatch(actions.add_description(id, input)),
+        getDescriptions: (id)=> dispatch(actions.get_descriptions(id)),
+        deleteDescription: (book, description)=> dispatch(actions.delete_description(book, description)),
     }
 }
 
