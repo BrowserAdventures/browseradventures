@@ -47,6 +47,7 @@ class BookPage extends Component
             <BookPageBuilder
                 descriptions={this.props.descriptions}
                 delete={this.delete}
+                src={this.passedState.url}
             />
         </div>)
     }
@@ -72,9 +73,6 @@ const mapDispatchToProps=(dispatch)=>
         deleteDescription: (book, description)=> dispatch(actions.delete_description(book, description)),
     }
 }
-
-
-
 
 
 

@@ -31,7 +31,6 @@ const Form = styled.form`
     justify-content: center;
     padding: 20px;
     margin: 20px;
-    background: rgba(0,0,0, 0.1);
     width: 200px;
     text-align: center;
 

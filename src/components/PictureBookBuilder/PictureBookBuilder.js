@@ -6,11 +6,11 @@ const pictureBookBuilder=(props)=>
     const books = props.books.map(self=> (
     <Container key={self.id}>
         <span onClick={()=> props.open(self)}>
-        <h3>{self.title}</h3>
-        <img
-            src={self.url}
-            alt=''
-        />
+            <h3>{self.title}</h3>
+            <img
+                src={self.url}
+                alt=''
+            />
         </span>
         <div onClick={()=> props.delete(self.id)}>Delete</div>
     </Container>))
@@ -24,17 +24,16 @@ const Wrapper = styled.div`
     justify-content: space-around;
     width: 100%;
 `
-const Span = styled.span`
-
-`
 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: rgba(0,0,0, 0.3);
+    background: linear-gradient(217deg, rgba(255,0,0,.3), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(0,255,0,.3), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.3), rgba(0,0,255,0) 70.71%);
     border-radius: 5px;
-    border: 1px solid rgba(0,0,0, 0.4);
+    border: 1px solid rgba(0,0,0, 0.7);
     width: 300px;
     height: 350px;
     text-align: center;
@@ -43,17 +42,20 @@ const Container = styled.div`
 
     :hover {
         cursor: pointer;
-        background: rgba(0,0,0, 0.5);
+        background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+                linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+                linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+        border: 1px solid rgba(0,0,0, 1);
     }
 
     img {
-        width: 100%;
+        width: 270px;
         height: 250px;
-        border: 0px solid rgba(0,0,0, 0.2);
+        border: 5px solid rgba(0,0,0, 0.3);
     }
     img:hover {
         cursor: pointer;
-        border: 0px solid rgba(0,0,0, 0.2);
+        border: 5px solid rgba(0,0,0, 0.6);
     }
 
     div {
@@ -67,7 +69,7 @@ const Container = styled.div`
     div:hover {
         color: red;
         cursor: pointer;
-        background: rgba(0,0,0, 0.3);
+        background: rgba(0,0,0, 0.5);
     }
 
     h3 {
