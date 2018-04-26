@@ -6,6 +6,7 @@ import Layout from './components/Layout/Layout'
 import Home from './containers/Home/Home'
 import PictureBook from './containers/PictureBook/PictureBook'
 import BookPage from './containers/PictureBook/BookPage/BookPage'
+import FlashCards from './containers/FlashCards/FlashCards'
 
 
 class App extends Component
@@ -16,6 +17,7 @@ class App extends Component
             <Switch>
                 <Route path="/picturebook" component={PictureBook} />
                 <Route path="/bookpage" component={BookPage} />
+                <Route path="/flashcards" component={FlashCards} />
                 <Route path="/" component={Home} />
               </Switch>
         </Layout>)

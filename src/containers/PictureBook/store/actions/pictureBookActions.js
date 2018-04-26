@@ -11,7 +11,8 @@ export const add_book=(book)=>
 
 export const get_books=()=>
 {
-    return dispatch => database.on('value', (snapshot)=> {
+    return dispatch => database.on('value', (snapshot)=>
+    {
         let books = snapshot.val();
         let booksArray = [];
         for (let self in books) {

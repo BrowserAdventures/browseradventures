@@ -5,9 +5,9 @@ import Header from '../../components/UI/Header/Header'
 
 class Home extends Component
 {
-    openPictureBook=()=>
+    openPage=(pathname)=>
     {
-        this.props.history.push('/picturebook')
+        this.props.history.push(`/${pathname}`)
     }
 
     render()
@@ -16,9 +16,9 @@ class Home extends Component
             <Header
                 title='Home'
                 imgStore='planetSpin'
-                click={this.openPictureBook}
             />
-
+            <h3 onClick={()=> this.openPage('picturebook')}>Picture Book</h3>
+            <h3 onClick={()=> this.openPage('flashcards')}>FlashCards</h3>
         </div>)
     }
 }

@@ -6,7 +6,7 @@ import * as actions from './store/actions/pictureBookActions'
 import Header from '../../components/UI/Header/Header'
 import Modal from '../../components/UI/Modal/Modal'
 
-import PictureBookForm from '../../components/PictureBookBuilder/PictureBookForm/PictureBookForm'
+import PictureBookForm from '../../components/PictureBookBuilder/PictureBookForm'
 import PictureBookBuilder from '../../components/PictureBookBuilder/PictureBookBuilder'
 
 
@@ -26,7 +26,11 @@ class PictureBook extends Component
 
     openBook=(book)=>
     {
-        this.props.history.push('/bookpage')
+        this.props.history.push({
+            pathname: '/bookpage',
+            state: book
+        })
+        console.log(book)
     }
 
     render()

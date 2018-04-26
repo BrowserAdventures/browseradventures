@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const pictureBookForm=(props)=> (
 
     <Form onSubmit={(E)=> E.preventDefault(props.submit(props.title, props.url))}>
-        <h3>{props.title}</h3>
+        <h3>Create a New Book!</h3>
         <label>Picture Name</label>
         <input
             type='input'
