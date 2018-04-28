@@ -3,8 +3,10 @@ import { connect } from 'react-redux'
 
 import Header from '../../components/UI/Header/Header'
 import Modal from '../../components/UI/Modal/Modal'
+import Bar from '../../components/UI/Bar/Bar'
 
 import FlashCardBuilder from '../../components/FlashCardBuilder/FlashCardBuilder'
+import Questions from '../../components/FlashCardBuilder/Questions'
 
 
 class FlashCards extends Component
@@ -26,6 +28,7 @@ class FlashCards extends Component
             cards: currentCards,
             current: this.getRandomCard(currentCards)
         })
+        this.props.getCard(this.props.cards)
     }
 
     getRandomCard=(currentCards)=> {
@@ -37,11 +40,13 @@ class FlashCards extends Component
         this.setState({
             current: this.getRandomCard(this.state.cards)
         })
+        //this.props.nextCard(this.props.cards, this.props.current)
+        this.props.getCard(this.props.cards)
     }
 
     render()
     {
-        const {cards, current, nextCard} = this.props
+        const {cards, current, nextCard, answers} = this.props
 
         return(<div>
             <Header title='FlashCards' imgStore='blueOrb'
@@ -52,11 +57,11 @@ class FlashCards extends Component
             <Modal show={this.state.modal} close={()=> this.setState({modal:false})}>
             </Modal>
             <FlashCardBuilder
-                title={this.state.current.title}
-                question='question'
-                answer='answer'
+                title={current.title}
+                question={current.question}
+                answer={current.answer}
             />
-            {log(cards.length)}
+            <Questions answers={answers} />
         </div>)
     }
 }
@@ -64,18 +69,20 @@ class FlashCards extends Component
 
 const mapStateToProps=(state)=>
 {
-    const {current, cards} = state.flashCardsReducer
+    const {current, cards, answers} = state.flashCardsReducer
 
     return{
         current: current,
-        cards: cards
+        cards: cards,
+        answers: answers,
     }
 }
 
 const mapDispatchToProps=(dispatch)=>
 {
     return{
-        nextCard: ()=> dispatch({type: 'NEXT'})
+        nextCard: (cards, current)=> dispatch({type: 'NEXT', cards: cards, current: current}),
+        getCard: (cards)=> dispatch({type: 'GET_CARD', cards: cards}),
     }
 }
 

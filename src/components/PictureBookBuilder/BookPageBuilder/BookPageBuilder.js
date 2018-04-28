@@ -8,10 +8,11 @@ const bookPageBuilder=(props)=>
     )).map(self=> (
     <Container key={self.id}>
         <p>{self.description}</p>
-        <div onClick={()=> props.delete(self.id)}>
+        <div>
             <img
                 src='http://downloadicons.net/sites/default/files/delete-button-icon-63568.png'
                 alt=''
+                onClick={()=> props.delete(self.id)}
             />
         </div>
     </Container>))

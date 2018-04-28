@@ -5,7 +5,7 @@
 
 }
 .flip .front {
-    background: #2980b9;
+    background: #3498db;
     border-radius: 7px;
     border: 1px solid black;
     position: absolute;
@@ -20,7 +20,7 @@
 }
 
 .flip .back {
-    background: #27ae60;
+    background: #2ecc71;
     border-radius: 7px;
     border: 1px solid black;
     position: absolute;

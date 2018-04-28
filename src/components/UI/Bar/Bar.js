@@ -1,22 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const bookPageBuilder=(props)=>
+const bar=(props)=>
 {
-    const descriptions = props.descriptions.filter(self=> (
-        self.id !== 'title' && self.id !== 'url'
-    )).map(self=> (
-    <Container key={self.id}>
-        <p>{self.description}</p>
-        <div onClick={()=> props.delete(self.id)}>
+    // const bars = props.bars.filter(self=> (
+    //     self.id !== 'title' && self.id !== 'url'
+    // )).map(self=> (
+    // <Container key={self.id}>
+    //     <p>{self.description}</p>
+    //     <div onClick={()=> props.delete(self.id)}>
+    //         <img
+    //             src='http://downloadicons.net/sites/default/files/delete-button-icon-63568.png'
+    //             alt=''
+    //         />
+    //     </div>
+    // </Container>))
+
+    return(<Container>
+        <p>{props.content}</p>
+        <div onClick={props.click}>
             <img
-                src='http://downloadicons.net/sites/default/files/delete-button-icon-63568.png'
+                src='https://img00.deviantart.net/6c29/i/2012/046/3/8/button_template_1_by_jemet49-d4pveq5.png'
                 alt=''
             />
         </div>
-    </Container>))
-
-    return <Wrapper>{descriptions}</Wrapper>;
+    </Container>)
 }
 
 const Wrapper = styled.div`
@@ -64,6 +72,7 @@ const Container = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
+        background: rgba(0,0,0, 0.3);
     }
     div img {
         height: 50px;
@@ -75,60 +84,7 @@ const Container = styled.div`
         border: 1px solid red;
         border-radius: 90px;
     }
-    div:hover {
-        color: red;
-        cursor: pointer;
-        background: rgba(0,0,0, 0.3);
-    }
 `
 
-// const Wrapper = styled.div`
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: space-around;
-//     width: 100%;
-// `
-//
-// const Container = styled.div`
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     background: rgba(255,255,255, 0.3);
-//     border-radius: 5px;
-//     border: 1px solid rgba(0,0,0, 0.4);
-//     width: 300px;
-//     text-align: center;
-//     padding:  0 10px;
-//     margin-bottom: 20px;
-//
-//     :hover {
-//         cursor: pointer;
-//         background: rgba(0,0,0, 0.5);
-//     }
-//
-//     img {
-//         width: 100%;
-//         height: 250px;
-//         border: 0px solid rgba(0,0,0, 0.2);
-//     }
-//     img:hover {
-//         cursor: pointer;
-//         border: 0px solid rgba(0,0,0, 0.2);
-//     }
-//
-//     div {
-//         height: 20px;
-//         color: transparent;
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//     }
-//     div:hover {
-//         color: red;
-//         cursor: pointer;
-//         background: rgba(0,0,0, 0.3);
-//     }
-// `
 
-
-export default bookPageBuilder;
+export default bar;

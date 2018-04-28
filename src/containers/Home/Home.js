@@ -15,10 +15,11 @@ class Home extends Component
         return(<div>
             <Header
                 title='Home'
-                imgStore='planetSpin'
+                imgStore='darkPlanet'
             />
             <h3 onClick={()=> this.openPage('picturebook')}>Picture Book</h3>
             <h3 onClick={()=> this.openPage('flashcards')}>FlashCards</h3>
+            <h3 onClick={()=> this.openPage('boxgenerator')}>BoxGenerator</h3>
         </div>)
     }
 }
