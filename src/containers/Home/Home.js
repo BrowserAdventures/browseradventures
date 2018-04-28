@@ -19,7 +19,8 @@ class Home extends Component
             />
             <h3 onClick={()=> this.openPage('picturebook')}>Picture Book</h3>
             <h3 onClick={()=> this.openPage('flashcards')}>FlashCards</h3>
-            <h3 onClick={()=> this.openPage('boxgenerator')}>BoxGenerator</h3>
+            <h3 onClick={()=> this.openPage('boxgenerator')}>Box Generator</h3>
+            <h3 onClick={()=> this.openPage('weathermap')}>Weather Map</h3>
         </div>)
     }
 }

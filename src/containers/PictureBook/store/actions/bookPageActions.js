@@ -1,4 +1,4 @@
-import {database, db_book, db_bookDescription} from '../../../../firebase'
+import {db_book, db_bookDescription} from '../../../../firebase'
 
 export const add_description=(id, description)=>
 {

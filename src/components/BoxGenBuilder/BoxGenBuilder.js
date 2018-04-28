@@ -8,6 +8,7 @@ const boxGenBuilder=(props)=>
         row={self.row}
         column={self.column}
         onClick={()=> props.delete(self)}
+        showBorder
     />))
 
     return(<Wrapper >
@@ -24,6 +25,10 @@ const Box = styled.div`
     background: #3d3d3d;
     ${row};
     ${column};
+    ${props => props.showBorder && `
+        border: 1px solid black;
+        border-radius: 8px;
+    `};
 
     :hover {
         cursor: pointer;

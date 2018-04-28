@@ -47,7 +47,7 @@ const Wrapper = styled.div`
     }
     img:hover {
         cursor: pointer;
-        background: rgba(0,0,0, 0.1);
+        background: rgba(0,0,0, 0.3);
 
     }
 
@@ -59,7 +59,7 @@ const Wrapper = styled.div`
     div:hover {
         color: rgb(65, 202, 244);
         cursor: pointer;
-        background: rgba(0,0,0, 0.1);
+        background: rgba(0,0,0, 0.3);
     }
 `
 
