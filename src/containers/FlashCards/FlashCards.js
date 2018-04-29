@@ -49,7 +49,7 @@ class FlashCards extends Component
         const {cards, current, nextCard, answers} = this.props
 
         return(<div>
-            <Header title='FlashCards' imgStore='blueOrb'
+            <Header title='FlashCards' imgStore='arrow' nextButton='nextButton'
                 backButtonClicked={()=> this.props.history.push('/')}
                 click={()=> this.setState({modal:true})}
                 nextButtonClicked={this.newCard}

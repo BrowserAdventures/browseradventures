@@ -14,17 +14,17 @@ const header=(props)=>
     }
 
     return(<Wrapper>
-        <img
+        <Image
             src={props.src || images[props.imgStore]}
             onClick={props.backButtonClicked}
-            rotate={props.back}
+            rotate={props.backButton}
             alt=''
         />
         <div onClick={props.click}><h3>{props.title}</h3></div>
-        <img
+        <Image
             src={props.src || images[props.imgStore]}
             onClick={props.nextButtonClicked}
-            rotate={props.next}
+            rotate={props.nextButton}
             alt=''
         />
     </Wrapper>)
@@ -39,18 +39,6 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-columns: 60px 1fr 60px;
 
-    img {
-        width: 60px;
-        height: 100%;
-        ${props=> props.rotate === props.back && 'transform: rotate(95deg)'};
-        ${props=> props.rotate === props.next && 'transform: rotate(-180deg)'};
-    }
-    img:hover {
-        cursor: pointer;
-        background: rgba(0,0,0, 0.3);
-
-    }
-
     div {
         height: 100%;
         text-align: center;
@@ -61,6 +49,20 @@ const Wrapper = styled.div`
         cursor: pointer;
         background: rgba(0,0,0, 0.3);
     }
+`
+const Image = styled.img`
+    width: 60px;
+    height: 100%;
+    ${props=> props.rotate === 'backButton' ? 'transform: rotate(95deg)':
+              props.rotate === 'nextButton' && 'transform: rotate(-180deg)'
+    };
+
+
+    :hover {
+        cursor: pointer;
+        background: rgba(0,0,0, 0.3);
+    }
+
 `
 
 

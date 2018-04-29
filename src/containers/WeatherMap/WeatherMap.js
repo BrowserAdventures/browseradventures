@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Header from '../../components/UI/Header/Header'
 import Modal from '../../components/UI/Modal/Modal'
 import GoogleMaps from '../../components/WeatherMapBuilder/GoogleMaps/GoogleMaps'
-import MapsSearchBox from '../../components/WeatherMapBuilder/GoogleMaps/MapSearchBox'
+import Weather from '../../components/WeatherMapBuilder/Weather'
 
 
 class WeatherMap extends Component
@@ -39,6 +39,7 @@ class WeatherMap extends Component
             <Header title='Weather Map' imgStore='arrow'
                 backButtonClicked={()=> this.props.history.push('/')}
                 click={()=> this.setState({modal:true})}
+                nextButton='nextButton'
             />
             <Modal show={this.state.modal} close={()=> this.setState({modal:false})}>
             </Modal>
@@ -46,12 +47,11 @@ class WeatherMap extends Component
                 isMarkerShown={this.state.marker}
                 onMarkerClick={this.handleMarkerClick}
             />
-        
+            <Weather />
         </div>)
     }
 }
 
-const GOOGLE_MAP_API_KEY = 'AIzaSyARbQ01SC1s2r2tsnwineuU9-XbKXfSQ0s'
 
 
 const mapStateToProps=(state)=>
