@@ -12,7 +12,7 @@ const googleMapBuilder=(props)=>
     />
 
     return(<GoogleMap
-        defaultZoom={8}
+        defaultZoom={10}
         defaultCenter={{lat: props.coord.lat, lng: props.coord.lon}}
     >
         {marker}

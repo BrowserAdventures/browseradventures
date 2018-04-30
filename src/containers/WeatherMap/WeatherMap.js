@@ -10,17 +10,17 @@ import WeatherForm from '../../components/WeatherMapBuilder/WeatherBuilder/Weath
 import WeatherDisplay from '../../components/WeatherMapBuilder/WeatherBuilder/WeatherDisplay'
 
 
-
 class WeatherMap extends Component
 {
     state = {
         temperature: '',
-        city: '',
-        country: '',
+        city: 'Miami',
+        country: 'US',
         humidity: '',
         description: '',
+        showWeather: true,
         coord: {
-            lat: 40.69, lon: -89.59
+            lat: 25.77, lon: -80.19
         },
         error: undefined,
     }
@@ -54,14 +54,9 @@ class WeatherMap extends Component
             humidity: data.main.humidity,
             description: data.weather[0].description,
             coord: data.coord,
+            showWeather: true,
             modal: false,
         })
-        log(this.state.coord)
-
-        // this.props.history.push({
-        //     pathname: '/weather',
-        //     state: this.state,
-        // })
     }
 
     delayedShowMarker=()=> {
@@ -77,25 +72,26 @@ class WeatherMap extends Component
 
     render()
     {
-        const showMap = !this.state.modal && <GoogleMapBuilder
+        const map = !this.state.modal && <GoogleMapBuilder
             isMarkerShown={this.state.marker}
             onMarkerClick={this.handleMarkerClick}
             coord={this.state.coord}
         />
 
+        const weather = this.state.showWeather && !this.state.modal && <Wrapper>
+            <WeatherDisplay data={this.state} />
+        </Wrapper>
+
         return(<div>
-            <Header title='Weather Map' imgStore='arrow'
+            <Header title={this.state.city} imgStore='arrow'
                 backButtonClicked={()=> this.props.history.push('/')}
                 click={()=> this.setState({modal:true})}
                 nextButton='nextButton'
             />
             <Modal show={this.state.modal} close={()=> this.setState({modal:false})}>
-            <Wrapper>
                 <WeatherForm submit={this.getWeather} />
-                <WeatherDisplay data={this.state} />
-            </Wrapper>
             </Modal>
-            {showMap}
+            {[map, weather]}
         </div>)
     }
 }

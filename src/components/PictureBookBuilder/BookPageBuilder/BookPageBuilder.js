@@ -36,7 +36,7 @@ const Wrapper = styled.div`
 `
 const Header = styled.div`
     width: 100%
-    background: black;
+    background: rgba(0,0,0, 0.9);
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
