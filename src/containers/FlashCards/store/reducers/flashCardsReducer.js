@@ -44,6 +44,7 @@ const initialState =
     ],
     current: {},
     answers: [],
+    test: ''
 }
 
 const flashCardsReducer=(state = initialState, action)=>
@@ -56,6 +57,7 @@ const flashCardsReducer=(state = initialState, action)=>
 
             var randomAnswers = cards.filter(self=> self !== setCurrent)
             var newAnswers = randomAnswers.splice(randomAnswers.length-2)
+
         return{
             ...state,
             current: setCurrent,
@@ -65,16 +67,22 @@ const flashCardsReducer=(state = initialState, action)=>
         case('NEXT'):
             var randomCard = action.cards.filter(self=> self !== action.current)
             //var answers = randomCard.filter(self=> self !== self.title || self.question)
-            var filterAnswers = action.cards.filter(self=> (self !== action.current))
+            var filterAnswers = action.cards.filter(self=> self !== action.current)
+            var Answer1 = {...filterAnswers[Math.floor(Math.random()*filterAnswers.length)]}
+
+            var filterAnswer2 = action.cards.filter(self=> self !== Answer1 && self !== action.current)
+            var Answer2 = {...filterAnswer2[Math.floor(Math.random()*filterAnswer2.length)]}
+
+            var mergeAnswers = [...action.current]
+
+
             var updateAnswers = filterAnswers.splice(filterAnswers.length-2)
 
-            for(var i = filterAnswers.length-1; i >= 3; i--) {
-                var updatedAnswers = filterAnswers.splice(Math.floor(Math.random()*filterAnswers.length), 1);
-            }
         return{
             ...state,
             current: randomCard[Math.floor(Math.random()*randomCard.length)],
-            answers: updateAnswers.concat(action.current)
+            answers: mergeAnswers,
+            test: mergeAnswers,
         }
 
         default: return state;

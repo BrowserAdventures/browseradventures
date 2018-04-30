@@ -18,9 +18,9 @@ class FlashCards extends Component
             {title: 'title2', question: 'question2', answer: 'answer2'},
         ]
     }
+
     componentWillMount()
     {
-
         const currentCards = this.state.cards;
 
         this.setState({
@@ -28,7 +28,7 @@ class FlashCards extends Component
             cards: currentCards,
             current: this.getRandomCard(currentCards)
         })
-        this.props.getCard(this.props.cards)
+        this.props.getCard(this.props.cards, this.props.answers)
     }
 
     getRandomCard=(currentCards)=> {
@@ -40,13 +40,16 @@ class FlashCards extends Component
         this.setState({
             current: this.getRandomCard(this.state.cards)
         })
-        //this.props.nextCard(this.props.cards, this.props.current)
-        this.props.getCard(this.props.cards)
+        var cardState = {
+        }
+        this.props.nextCard(this.props.cards, this.props.current, this.props.answers)
+        //this.props.getCard(this.props.cards)
+        log(this.props.test)
     }
 
     render()
     {
-        const {cards, current, nextCard, answers} = this.props
+        const {cards, current, nextCard, answers, test} = this.props
 
         return(<div>
             <Header title='FlashCards' imgStore='arrow' nextButton='nextButton'
@@ -61,6 +64,7 @@ class FlashCards extends Component
                 question={current.question}
                 answer={current.answer}
             />
+
             <Questions answers={answers} />
         </div>)
     }
@@ -69,25 +73,26 @@ class FlashCards extends Component
 
 const mapStateToProps=(state)=>
 {
-    const {current, cards, answers} = state.flashCardsReducer
+    const {current, cards, answers, test} = state.flashCardsReducer
 
     return{
         current: current,
         cards: cards,
         answers: answers,
+        test: test,
     }
 }
 
 const mapDispatchToProps=(dispatch)=>
 {
     return{
-        nextCard: (cards, current)=> dispatch({type: 'NEXT', cards: cards, current: current}),
+        nextCard: (cards, current, answers)=> dispatch({type: 'NEXT', cards: cards, current: current, answers: answers}),
         getCard: (cards)=> dispatch({type: 'GET_CARD', cards: cards}),
     }
 }
 
 
-const log=(self)=> console.log(self)
+const log=(id_1, id_2)=> console.log((id_1, id_2 || id_1))
 
 
 

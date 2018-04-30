@@ -4,16 +4,16 @@ import {compose, withProps} from "recompose"
 import {GoogleMap, Marker, withGoogleMap, withScriptjs} from "react-google-maps"
 
 
-const googleMaps=(props)=>
+const googleMapBuilder=(props)=>
 {
     const marker = props.isMarkerShown && <Marker
-        position={{lat: -34.397, lng: 150.644 }}
+        position={{lat: props.coord.lat, lng: props.coord.lon }}
         onClick={props.onMarkerClick}
     />
 
     return(<GoogleMap
         defaultZoom={8}
-        defaultCenter={{lat: -34.397, lng: 150.644 }}
+        defaultCenter={{lat: props.coord.lat, lng: props.coord.lon}}
     >
         {marker}
     </GoogleMap>)
@@ -30,4 +30,4 @@ const googleMapProps = {
 export default compose(withProps(googleMapProps),
     withScriptjs,
     withGoogleMap
-)(googleMaps)
+)(googleMapBuilder)
