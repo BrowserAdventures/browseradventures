@@ -22,8 +22,8 @@ const googleMapBuilder=(props)=>
 const googleMapProps = {
     googleMapURL: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyARbQ01SC1s2r2tsnwineuU9-XbKXfSQ0s&callback=initMap',
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
-    mapElement: <div style={{ height: `100%` }} />,
+    containerElement: <div style={{ height: `100%` }} />,
+    mapElement: <div style={{ height: `100%`}} />,
 }
 
 

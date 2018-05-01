@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 
 import Header from '../../components/UI/Header/Header'
 import Modal from '../../components/UI/Modal/Modal'
-import {Wrapper} from '../../components/styles/Wrapper/Wrapper'
+import {
+    Wrapper, FlexBasis, MapContainer, Titleh3
+} from '../../components/styles/Wrapper/Wrapper'
 
 import GoogleMapBuilder from '../../components/WeatherMapBuilder/GoogleMapBuilder/GoogleMapBuilder'
 import WeatherForm from '../../components/WeatherMapBuilder/WeatherBuilder/WeatherForm'
@@ -78,11 +80,15 @@ class WeatherMap extends Component
             coord={this.state.coord}
         />
 
-        const weather = this.state.showWeather && !this.state.modal && <Wrapper>
+        const weather = this.state.showWeather && !this.state.modal && (
             <WeatherDisplay data={this.state} />
-        </Wrapper>
+        )
 
-        return(<div>
+        const instructions = !this.state.showWeather && (<Titleh3 height='200px'>
+            <h3>Click the header to search a city on the GoogleMap and get the current weather!</h3>
+        </Titleh3>)
+
+        return(<Fragment>
             <Header title={this.state.city} imgStore='arrow' noMargin
                 backButtonClicked={()=> this.props.history.push('/')}
                 click={()=> this.setState({modal:true})}
@@ -91,8 +97,11 @@ class WeatherMap extends Component
             <Modal show={this.state.modal} close={()=> this.setState({modal:false})}>
                 <WeatherForm submit={this.getWeather} />
             </Modal>
-            {[map, weather]}
-        </div>)
+            <Wrapper>
+                <FlexBasis basis='25' padding='20px'>{[weather, instructions]}</FlexBasis>
+                <MapContainer>{map}</MapContainer>
+            </Wrapper>
+        </Fragment>)
     }
 }
 
