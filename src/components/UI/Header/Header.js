@@ -13,7 +13,7 @@ const header=(props)=>
         arrow2: 'http://leadershipcentrecounty.org/wp-content/uploads/2014/10/dropdown_arrow.png',
     }
 
-    return(<Wrapper>
+    return(<Wrapper noMargin={props.noMargin}>
         <Image
             src={props.src || images[props.imgStore]}
             onClick={props.backButtonClicked}
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
     background: rgba(0,0,0, 0.7);
     width: 100%;
     height: 60px;
-    margin-bottom: 20px;
+    margin-bottom: ${props=> props.noMargin || '20px'};
     display: grid;
     grid-template-columns: 60px 1fr 60px;
 

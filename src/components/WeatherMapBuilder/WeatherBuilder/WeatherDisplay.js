@@ -9,8 +9,8 @@ const weatherDisplay=(props)=>
 
     return(<Wrapper>
         <div>Location:</div><div>{city}, {country}</div>
-        <div>Temperature:</div><div>{temperature}</div>
-        <div>Humidity:</div><div>{humidity}</div>
+        <div>Temperature:</div><div>{temperature}f</div>
+        <div>Humidity:</div><div>{humidity}%</div>
         <div>Description:</div><div>{description}</div>
     </Wrapper>)
 }

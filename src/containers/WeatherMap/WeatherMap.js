@@ -18,7 +18,7 @@ class WeatherMap extends Component
         country: 'US',
         humidity: '',
         description: '',
-        showWeather: true,
+        showWeather: false,
         coord: {
             lat: 25.77, lon: -80.19
         },
@@ -83,7 +83,7 @@ class WeatherMap extends Component
         </Wrapper>
 
         return(<div>
-            <Header title={this.state.city} imgStore='arrow'
+            <Header title={this.state.city} imgStore='arrow' noMargin
                 backButtonClicked={()=> this.props.history.push('/')}
                 click={()=> this.setState({modal:true})}
                 nextButton='nextButton'
