@@ -8,6 +8,7 @@ import PictureBook from './containers/PictureBook/PictureBook'
 import BookPage from './containers/PictureBook/BookPage/BookPage'
 import FlashCards from './containers/FlashCards/FlashCards'
 import BoxGenerator from './containers/BoxGenerator/BoxGenerator'
+import SpriteAnimations from './containers/BoxGenerator/SpriteAnimations/SpriteAnimations'
 import WeatherMap from './containers/WeatherMap/WeatherMap'
 
 
@@ -21,6 +22,7 @@ class App extends Component
                 <Route path="/bookpage" component={BookPage} />
                 <Route path="/flashcards" component={FlashCards} />
                 <Route path="/BoxGenerator" component={BoxGenerator} />
+                <Route path="/spriteanimations" component={SpriteAnimations} />
                 <Route path="/weathermap" component={WeatherMap} />
                 <Route path="/" component={Home} />
               </Switch>

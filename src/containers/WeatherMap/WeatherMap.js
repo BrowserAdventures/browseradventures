@@ -89,10 +89,9 @@ class WeatherMap extends Component
         </Titleh3>)
 
         return(<Fragment>
-            <Header title={this.state.city} imgStore='arrow' noMargin
+            <Header title={this.state.city} backButton noMargin
                 backButtonClicked={()=> this.props.history.push('/')}
                 click={()=> this.setState({modal:true})}
-                nextButton='nextButton'
             />
             <Modal show={this.state.modal} close={()=> this.setState({modal:false})}>
                 <WeatherForm submit={this.getWeather} />

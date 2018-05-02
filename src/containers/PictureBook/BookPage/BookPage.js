@@ -33,7 +33,7 @@ class BookPage extends Component
     render()
     {
         return(<div>
-            <Header title={this.passedState.title} imgStore='arrow' nextButton='nextButton'
+            <Header title={this.passedState.title} backButton 
                 backButtonClicked={()=> this.props.history.push('/picturebook')}
                 click={()=> this.setState({modal:true})}
             />

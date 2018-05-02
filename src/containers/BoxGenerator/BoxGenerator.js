@@ -71,21 +71,20 @@ class BoxGenerator extends Component
 
     deleteBoxHandler=(box)=> {
         let updatBoxes = [...this.state.boxes]
-        
+
     }
 
     render()
     {
         return(<div>
-            <Header title='Box Generator' imgStore='blueOrb'
+            <Header title='Box Generator' backButton nextButton
                 backButtonClicked={()=> this.props.history.push('/')}
                 click={this.start}
-                nextButtonClicked={this.newBox}
+                nextButtonClicked={()=> this.props.history.push('/SpriteAnimations')}
             />
             <Modal show={this.state.modal} close={()=> this.setState({modal:false})}>
             </Modal>
             <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
-            <h2>{this.state.counter}</h2>
             <BoxGenBuilder
                 boxes={this.state.boxes}
                 delete={this.deleteBoxHandler}

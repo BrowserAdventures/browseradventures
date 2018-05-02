@@ -6,7 +6,7 @@ const navItem=(props)=> (<NavItem>
     <NavLink
         to={props.to}
         exact={props.exact}
-        activeStyle={{color: '#0097e6'}}
+        activeStyle={{color: '#44bd32'}}
         {...props}
     />
 </NavItem>)
@@ -16,7 +16,6 @@ const NavItem = styled.li`
     box-sizing: border-box;
     display: block;
     width: 100%;
-
 
     a {
         color: white;

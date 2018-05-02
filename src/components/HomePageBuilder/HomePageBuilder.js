@@ -58,7 +58,7 @@ const Container = styled.div`
 
     }
     p:hover {
-        color: red;
+        color: #4cd137;
         cursor: pointer;
         background: rgba(0,0,0, 0.5);
     }

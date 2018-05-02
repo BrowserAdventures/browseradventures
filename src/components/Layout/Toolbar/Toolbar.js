@@ -27,9 +27,6 @@ const Header = styled.header`
     padding: 0 20px;
     box-sizing: border-box;
     z-index: 90;
-
-
-
 `
 
 export default toolbar;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const header=(props)=>
 {
@@ -11,21 +11,21 @@ const header=(props)=>
         darkPlanet: 'http://i2.photobucket.com/albums/y17/slyke57/Anime/hj/Cybertron.png',
         arrow: 'http://miniemeninstituut.org/5bi/med/image/pijllinks.png',
         arrow2: 'http://leadershipcentrecounty.org/wp-content/uploads/2014/10/dropdown_arrow.png',
+        greenFire: 'http://www.fun-lover.com/graphic-shop/Halloween/images/FireSmoke/fire-023.png',
     }
 
     return(<Wrapper noMargin={props.noMargin}>
         <Image
-            src={props.src || images[props.imgStore]}
+            src={props.src || props.backButton && images.arrow || images[props.imgStore]}
             onClick={props.backButtonClicked}
-            rotate={props.backButton}
             alt=''
         />
         <div onClick={props.click}><h3>{props.title}</h3></div>
         <Image
-            src={props.src || images[props.imgStore]}
+            src={props.src || props.nextButton && images.arrow || images[props.imgStore]}
             onClick={props.nextButtonClicked}
-            rotate={props.nextButton}
             alt=''
+            nextButton={props.nextButton}
         />
     </Wrapper>)
 }
@@ -45,7 +45,7 @@ const Wrapper = styled.div`
         color: white;
     }
     div:hover {
-        color: rgb(65, 202, 244);
+        color: #44bd32;
         cursor: pointer;
         background: rgba(0,0,0, 0.3);
     }
@@ -56,8 +56,7 @@ const Image = styled.img`
     ${props=> props.rotate === 'backButton' ? 'transform: rotate(95deg)':
               props.rotate === 'nextButton' && 'transform: rotate(-180deg)'
     };
-
-
+    ${props=> props.nextButton && 'transform: rotate(-180deg)'};
     :hover {
         cursor: pointer;
         background: rgba(0,0,0, 0.3);

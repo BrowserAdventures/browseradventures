@@ -17,7 +17,7 @@ class Home extends Component
         return(<div>
             <Header
                 title='Home'
-                imgStore='darkPlanet'
+                imgStore='greenFire'
             />
             <HomePageBuilder
                 title='Weather Map'
@@ -40,7 +40,13 @@ class Home extends Component
                 instructions='play FlashCards to improve your JavaScript skills'
                 image='http://www.stickpng.com/assets/images/580b585b2edbce24c47b27a6.png'
             />
-            <h3 onClick={()=> this.openPage('boxgenerator')}>Box Generator</h3>
+            <HomePageBuilder
+                title='Box Generator'
+                pathname='boxgenerator'
+                open={this.openPage}
+                instructions='generates random boxes'
+                image='https://static.wixstatic.com/media/36694e_ba9478af875443839e786ff1eb4aa63f~mv2.png/v1/fill/w_784,h_521,al_c,usm_0.66_1.00_0.01/36694e_ba9478af875443839e786ff1eb4aa63f~mv2.png'
+            />
         </div>)
     }
 }

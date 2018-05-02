@@ -36,9 +36,9 @@ class PictureBook extends Component
     render()
     {
         return(<div>
-            <Header title='Picture Book' imgStore='arrow'
+            <Header title='Picture Book' backButton
                 backButtonClicked={()=> this.props.history.push('/')}
-                click={()=> this.setState({modal:true})} nextButton='nextButton'
+                click={()=> this.setState({modal:true})} 
             />
             <Modal show={this.state.modal} close={()=> this.setState({modal:false})}>
                 <PictureBookForm
