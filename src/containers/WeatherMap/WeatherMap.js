@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 
-import Header from '../../components/UI/Header/Header'
+import Header from '../../components/UI/Header/Header2'
 import Modal from '../../components/UI/Modal/Modal'
 import {
     Wrapper, FlexBasis, MapContainer, Titleh3
@@ -89,7 +89,9 @@ class WeatherMap extends Component
         </Titleh3>)
 
         return(<Fragment>
-            <Header title={this.state.city} backButton noMargin
+            <Header
+                title={this.state.city} instructions='Look up a city?'
+                backButton noMargin
                 backButtonClicked={()=> this.props.history.push('/')}
                 click={()=> this.setState({modal:true})}
             />
