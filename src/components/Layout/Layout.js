@@ -11,7 +11,7 @@ const layout=(props)=> (<Wrapper>
 
 
 const Wrapper = styled.div`
-    margin-top: 60px;
+    margin-top: 0px;
     background: rgba(0,0,0, 0.5);
     min-height: 100vh;
 `

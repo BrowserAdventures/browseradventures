@@ -35,11 +35,13 @@ class SpriteAnimations extends Component
 
     }
 
+
     render()
     {
         return(<Fragment>
-            <Header title='Sprite Animations' backButton
+            <Header title='Sprite Animations' backButton nextButton
                 backButtonClicked={()=> this.props.history.push('/boxgenerator')}
+                nextButtonClicked={()=> this.props.history.push('/reactcanvas')}
                 click={this.start}
             />
             <Sprite />
