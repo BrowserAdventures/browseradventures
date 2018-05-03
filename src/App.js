@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route, Switch, withRouter} from 'react-router-dom'
 
 import Layout from './components/Layout/Layout'
+import ParticleSystem from './ParticleSystem'
 
 import Home from './containers/Home/Home'
 import PictureBook from './containers/PictureBook/PictureBook'
@@ -31,5 +32,9 @@ class App extends Component
         </Layout>)
     }
 }
+
+
+
+
 
 export default withRouter(App);
