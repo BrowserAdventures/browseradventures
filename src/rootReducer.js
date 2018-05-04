@@ -4,7 +4,6 @@ import pictureBookReducer from './containers/PictureBook/store/reducers/pictureB
 import bookPageReducer from './containers/PictureBook/store/reducers/bookPageReducer'
 import flashCardsReducer from './containers/FlashCards/store/reducers/flashCardsReducer'
 import weatherMapReducer from './containers/WeatherMap/store/reducers/weatherMapReducer'
-import homePageReducer from './containers/Home/store/reducers/homePageReducer'
 
 
 const rootReducer = combineReducers({
@@ -12,7 +11,6 @@ const rootReducer = combineReducers({
     bookPageReducer,
     flashCardsReducer,
     weatherMapReducer,
-    homePageReducer,
 })
 
 export default rootReducer;

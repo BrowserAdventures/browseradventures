@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d');
-const W = canvas.width = window.innerWidth;;
+const W = canvas.width = window.innerWidth;
 const H = canvas.height;
 
 

@@ -5,6 +5,8 @@ import Layout from './components/Layout/Layout'
 import ParticleSystem from './ParticleSystem'
 
 import Home from './containers/Home/Home'
+import Games from './containers/Games/Games'
+import BirdPoo from './containers/Games/BirdPoo/BirdPoo'
 import PictureBook from './containers/PictureBook/PictureBook'
 import BookPage from './containers/PictureBook/BookPage/BookPage'
 import FlashCards from './containers/FlashCards/FlashCards'
@@ -27,12 +29,14 @@ class App extends Component
                 <Route path="/spriteanimations" component={SpriteAnimations} />
                 <Route path="/reactcanvas" component={ReactCanvas} />
                 <Route path="/weathermap" component={WeatherMap} />
+                <Route path="/games" component={Games} />
+                <Route path="/birdpoo" component={BirdPoo} />
+                <Route path='/bird-poo' component={() => window.location = 'http://browseradventures.com/bird%20poo/'}/>
                 <Route path="/" component={Home} />
               </Switch>
         </Layout>)
     }
 }
-
 
 
 
