@@ -47,13 +47,7 @@ class Home extends Component
                 instructions='generates random boxes'
                 image='https://static.wixstatic.com/media/36694e_ba9478af875443839e786ff1eb4aa63f~mv2.png/v1/fill/w_784,h_521,al_c,usm_0.66_1.00_0.01/36694e_ba9478af875443839e786ff1eb4aa63f~mv2.png'
             />
-            <HomePageBuilder
-                title='bird poo'
-                pathname='bird-poo'
-                open={this.openPage}
-                instructions='generates random boxes'
-                image='https://static.wixstatic.com/media/36694e_ba9478af875443839e786ff1eb4aa63f~mv2.png/v1/fill/w_784,h_521,al_c,usm_0.66_1.00_0.01/36694e_ba9478af875443839e786ff1eb4aa63f~mv2.png'
-            />
+
         </div>)
     }
 }

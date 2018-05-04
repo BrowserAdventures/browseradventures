@@ -32,6 +32,10 @@ class App extends Component
                 <Route path="/games" component={Games} />
                 <Route path="/birdpoo" component={BirdPoo} />
                 <Route path='/bird-poo' component={() => window.location = 'http://browseradventures.com/bird%20poo/'}/>
+                <Route path='/archer' component={() => window.location = 'http://browseradventures.com/archer/'}/>
+                <Route path='/lasers' component={() => window.location = 'http://browseradventures.com/ExplodingLasers/'}/>
+                <Route path='/wizard' component={() => window.location = 'http://browseradventures.com/Wizard_platformer/'}/>
+                <Route path='/shooter' component={() => window.location = 'http://browseradventures.com/shooter/'}/>
                 <Route path="/" component={Home} />
               </Switch>
         </Layout>)

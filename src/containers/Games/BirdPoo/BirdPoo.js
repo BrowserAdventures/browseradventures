@@ -277,7 +277,7 @@ class Game
         // draw score //
         ctx.font = '18px Arial';
         ctx.fillStyle = 'rgb(155, 125, 105)';
-        ctx.fillText('Score:  '+ this.score, W*0.46, H*0.1);
+        //ctx.fillText('Score:  '+ this.score, W*0.46, H*0.1);
     }
 
     update(dt) // Game logic
@@ -333,14 +333,13 @@ let KEY = {                 // KEY CONTROLS //
 
         if (e.keyCode == 32) game.spit.fire = false; // poop //
     },
-    // touchMove: function(e) {
-    //     if(e.touches) {
-    //     player.pos.x = e.touches[0].pageX - canvas.offsetLeft - player.size.x / 2;
-    //     player.pos.y = e.touches[0].pageY - canvas.offsetTop - player.size.y / 2;
-    //     output.innerHTML = "Touch: "+ " x: " + player.pos.x + ", y: " + player.pos.y;
-    //     e.preventDefault();
-    //     }
-    // },
+    touchMove: function(e) {
+        if(e.touches) {
+        player.pos.x = e.touches[0].pageX - canvas.offsetLeft - player.size.x / 2;
+        player.pos.y = e.touches[0].pageY - canvas.offsetTop - player.size.y / 2;
+        e.preventDefault();
+        }
+    },
     touch: function(e) {
         if(e.touches) game.spit.fire = true;
     }
