@@ -26,6 +26,13 @@ const Wrapper = styled.div`
     height: 200px;
     width: 100%;
 
+    @media (max-width: 500px) {
+        width: 100px;
+        height: 150px;
+        grid-template-columns: 1fr;
+        grid-gap: 0px 0px;
+    }
+
     div:nth-child(odd) {
         display: flex;
         flex-direction: column;
@@ -40,6 +47,10 @@ const Wrapper = styled.div`
         text-align: center;
         background: rgba(255,255,255, 0.4);
         box-shadow: 1px 1px 1px 0px rgba(0,0,0, 0.5);
+
+        @media (max-width: 500px) {
+            margin-bottom: 10px;
+        }
     }
 `
 

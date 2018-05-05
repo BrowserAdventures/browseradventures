@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const weatherForm=(props)=>
 {
     return(<Form onSubmit={props.submit}>
-        <h3>look up weather</h3>
+        <h3>Look up Weather</h3>
         <label>City Name</label>
         <input
             type='input'
@@ -17,7 +17,7 @@ const weatherForm=(props)=>
         <input
             type='input'
             name='country'
-            placeholder='enter a country name...'
+            placeholder='enter a 2 digit country...'
         />
         <input type='submit' value='Submit' />
     </Form>)
@@ -29,13 +29,13 @@ const Form = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px;
     margin: 20px;
     width: 200px;
     text-align: center;
 
     input {
         margin-bottom: 20px;
+        border: 1px solid rgba(0,0,0, 0.2);
     }
 `
 

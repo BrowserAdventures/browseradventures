@@ -34,6 +34,11 @@ const Container = styled.div`
     padding:  0 20px;
     margin-bottom: 20px;
 
+    @media (max-width: 500px) {
+        width: 200px;
+        height: 350px;
+    }
+
     :hover {
         cursor: pointer;
         background: rgba(0,0,0,0.8);
@@ -43,6 +48,11 @@ const Container = styled.div`
         height: 350px;
         border: 1px solid #2ecc71;
         background: rgba(0,0,0,0.3);
+
+        @media (max-width: 500px) {
+            width: 200px;
+            height: 225px;
+        }
     }
     img:hover {
         cursor: pointer;

@@ -18,10 +18,11 @@ const bar=(props)=>
 
     return(<Container>
         <p>{props.content}</p>
-        <div onClick={props.click}>
+        <div>
             <img
                 src='https://img00.deviantart.net/6c29/i/2012/046/3/8/button_template_1_by_jemet49-d4pveq5.png'
                 alt=''
+                onClick={props.click}
             />
         </div>
     </Container>)
@@ -36,8 +37,6 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     background: rgba(255,255,255, 0.3);
     border-bottom: 1px solid rgba(0,0,0, 0.4);
     border-top: 2px solid rgba(0,0,0, 0.2);

@@ -60,20 +60,24 @@ const animate=(props)=>(
 const Container = styled.div`
     position: fixed;
     z-index: 500;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 2px #ccc;
+    border: 1px solid rgba(0,0,0, 0.5);
     background-color: white;
     padding: 10px;
     text-align: center;
     box-sizing: border-box;
     top: 30%;
-    left: 25%;
-    width: 50%;
+    left: 35%;
+    width: 30%;
     transition: all 0.3s ease-out;
     animation: ${animate} 0.4s ease-out forwards;
-
     display: flex;
     justify-content: center;
+
+    @media (max-width: 800px) {
+        top: 15%;
+        left: 24%;
+        width: 52%;
+    }
 `
 
 export default modal;

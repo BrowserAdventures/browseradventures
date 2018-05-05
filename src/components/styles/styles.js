@@ -6,7 +6,8 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: ${props=> props.content || 'center'};
+    flex-direction: ${props=> props.direction};
     width: 100%;
     margin: ${props=> props.margin}%;
 `
@@ -14,7 +15,12 @@ export const Wrapper = styled.div`
 export const FlexBasis = styled.div`
     display: flex;
     flex-basis: ${props=> props.basis}%;
-    padding: ${props=> props.padding};
+    padding: ${props=> props.padding}px;
+
+    @media (max-width: 500px) {
+        width: ${props=> props.mediaWidth}px;
+        padding: ${props=> props.padding/5}px;
+    }
 `
 
 export const MapContainer = styled.div`

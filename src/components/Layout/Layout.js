@@ -20,6 +20,11 @@ const Content = styled.main`
     margin-left: 50px;
     margin-right: 50px;
     min-height: 100vh;
+
+    @media (max-width: 500px) {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
 `
 
 export default layout;

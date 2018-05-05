@@ -5,7 +5,7 @@ import Header from '../../components/UI/Header/Header2'
 import Modal from '../../components/UI/Modal/Modal'
 import {
     Wrapper, FlexBasis, MapContainer, Titleh3
-} from '../../components/styles/Wrapper/Wrapper'
+} from '../../components/styles/styles'
 
 import GoogleMapBuilder from '../../components/WeatherMapBuilder/GoogleMapBuilder/GoogleMapBuilder'
 import WeatherForm from '../../components/WeatherMapBuilder/WeatherBuilder/WeatherForm'
@@ -30,7 +30,7 @@ class WeatherMap extends Component
     componentWillMount()
     {
         this.setState({
-            modal: false,
+            modal: true,
             marker: false,
         })
     }
@@ -99,7 +99,7 @@ class WeatherMap extends Component
                 <WeatherForm submit={this.getWeather} />
             </Modal>
             <Wrapper>
-                <FlexBasis basis='25' padding='20px'>{[weather, instructions]}</FlexBasis>
+                <FlexBasis basis='25' padding='20'>{[weather, instructions]}</FlexBasis>
                 <MapContainer>{map}</MapContainer>
             </Wrapper>
         </Fragment>)

@@ -40,6 +40,11 @@ const Container = styled.div`
     padding:  0 10px;
     margin-bottom: 20px;
 
+    @media (max-width: 500px) {
+        width: 180px;
+        height: 250px;
+    }
+
     :hover {
         cursor: pointer;
         background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
@@ -48,10 +53,20 @@ const Container = styled.div`
         border: 1px solid rgba(0,0,0, 1);
     }
 
+    h3 {
+        @media (max-width: 500px) {
+            margin: 10px 0px;
+        }
+    }
+
     img {
-        width: 270px;
+        width: 90%;
         height: 250px;
         border: 5px solid rgba(0,0,0, 0.3);
+
+        @media (max-width: 500px) {
+            height: 175px;
+        }
     }
     img:hover {
         cursor: pointer;

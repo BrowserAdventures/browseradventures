@@ -42,7 +42,7 @@ class Games extends Component
                 title='Exploding Lasers'
                 pathname='lasers'
                 open={this.openPage}
-                instructions='use arrow keys to move and spacebar to shoot laser!'
+                instructions='use arrow keys to move and up arrow to shoot laser!'
                 image={lasers}
             />
             <HomePageBuilder
