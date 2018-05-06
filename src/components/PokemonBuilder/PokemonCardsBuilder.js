@@ -1,9 +1,8 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
-import {Wrapper} from '../styles/styles'
 
 
-const flipBookBuilder=(props)=>
+const pokemonCardsBuilder=(props)=>
 {
     return(<Wrapper margin='20px 0'>
         <Flip>
@@ -19,6 +18,9 @@ const flipBookBuilder=(props)=>
     </Wrapper>)
 }
 
+const Wrapper = styled.div`
+
+`
 
 const Flip = styled.div`
     width: 240px;
@@ -26,15 +28,6 @@ const Flip = styled.div`
     text-align: center;
 
     div:nth-child(even)  {
-        background: #3498db;
-        border-radius: 7px;
-        border: 1px solid black;
-        position: absolute;
-        transform: perspective(600px) rotateY(0deg);
-        width: 240px;
-        height: 300px;
-        backface-visibility: hidden;
-        transition: transform 0.5s linear 0s;
 
         p{
             margin-top: 25%;
@@ -43,15 +36,6 @@ const Flip = styled.div`
     }
 
     div:nth-child(odd) {
-        background: #2ecc71;
-        border-radius: 7px;
-        border: 1px solid black;
-        position: absolute;
-        transform: perspective(600px) rotateY(180deg);
-        width: 240px;
-        height: 300px;
-        backface-visibility: hidden;
-        transition: transform 0.5s linear 0s;
 
         p{
             margin-top: 15%;
@@ -69,4 +53,4 @@ const Flip = styled.div`
 
 
 
-export default flipBookBuilder;
+export default pokemonCardsBuilder;

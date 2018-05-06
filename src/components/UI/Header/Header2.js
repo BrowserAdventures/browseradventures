@@ -22,7 +22,7 @@ const header=(props)=>
         />
         <Container>
             <div onClick={props.click}><h3>{props.instructions}</h3></div>
-            <div onClick={props.click}><h3>{props.title}</h3></div>
+            <div><h3>{props.title}</h3></div>
         </Container>
         <Image
             src={props.src || props.nextButton && images.arrow || images[props.imgStore]}

@@ -7,14 +7,11 @@ const H = canvas.height;
 
 
 
-const update=(props)=>
-{
-    player.draw()
-}
 
 
 
-const Square=()=>
+
+function square()
 {
     this.x = 20;
     this.y = 20;
@@ -24,17 +21,34 @@ const Square=()=>
         ctx.fillRect(this.x, this.y, 20, 20)
     }
 }
-const player = new Square
+
+const circle=(x, y)=>
+{
+    this.x = x;
+    this.y = y;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, 20, 0, Math.PI*2, false);
+    ctx.fillStyle = "green";
+    ctx.fill();
+    ctx.closePath();
+}
+
+
+var player = new square()
 
 const mouseMoveHandler=(E)=> {
     var mouseX = E.clientX - canvas.offsetLeft;
     var mouseY = E.clientY - canvas.offsetLeft;
 
-	mouseX -= player.x;
-	mouseY -= player.y;
+	mouseX -= circle.x;
+	mouseY -= circle.y;
 }
-
 document.addEventListener("mousemove", mouseMoveHandler, false);
+
+const update=(props)=>
+{
+    circle(20, 20)
+}
 
 const loop=(lastTime)=> {
     const callback=(Mseconds)=> {
@@ -45,6 +59,11 @@ const loop=(lastTime)=> {
         requestAnimationFrame(callback);
     }
     callback();
+}
+
+
+const setup=()=> {
+
 }
 
 class ParticleSystem extends Component
@@ -76,9 +95,9 @@ class ParticleSystem extends Component
 
     render()
     {
-        return(<Fragment>
+        return(<div>
             {this.state.gameLoop()}
-        </Fragment>)
+        </div>)
     }
 }
 

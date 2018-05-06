@@ -30,7 +30,7 @@ class WeatherMap extends Component
     componentWillMount()
     {
         this.setState({
-            modal: true,
+            modal: false,
             marker: false,
         })
     }
@@ -44,10 +44,8 @@ class WeatherMap extends Component
         E.preventDefault()
         const city = E.target.elements.city.value
         const country = E.target.elements.country.value
-
         const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=imperial`)
         const data = await api_call.json()
-        log(data)
 
         this.setState({
             temperature: data.main.temp,
@@ -109,25 +107,4 @@ class WeatherMap extends Component
 const API_KEY = 'ec552f529b65a49792e789951518a724'
 
 
-
-const mapStateToProps=(state)=>
-{
-    return{
-
-    }
-}
-
-const mapDispatchToProps=(dispatch)=>
-{
-    return{
-
-    }
-}
-
-
-const log=(self)=> console.log(self)
-
-
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(WeatherMap);
+export default WeatherMap;

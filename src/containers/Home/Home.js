@@ -37,11 +37,11 @@ class Home extends Component
                 image={reptilianImage}
             />
             <HomePageBuilder
-                title='FlashCards'
-                pathname='flashcards'
+                title='Pokemon'
+                pathname='pokemoncards'
                 open={this.openPage}
-                instructions='play FlashCards to improve your JavaScript skills'
-                image={flashcardsImage}
+                instructions='A page full of pokemon!'
+                image='http://static.pokemonpets.com/images/monsters-images-800-800/94-Gengar.png'
             />
             <HomePageBuilder
                 title='Animations'
@@ -49,13 +49,6 @@ class Home extends Component
                 open={this.openPage}
                 instructions='a collection of random animations'
                 image='https://vignette.wikia.nocookie.net/denaruto3/images/4/42/Juubi.png/revision/latest?cb=20111121203959&path-prefix=de'
-            />
-            <HomePageBuilder
-                title='FlipBook'
-                pathname='flipbook'
-                open={this.openPage}
-                instructions='a collection of random animations'
-                image=''
             />
         </Fragment>)
     }

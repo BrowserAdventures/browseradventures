@@ -54,9 +54,6 @@ const Container = styled.div`
             height: 225px;
         }
     }
-    img:hover {
-        cursor: pointer;
-    }
 
     p {
         height: 40px;
@@ -65,12 +62,13 @@ const Container = styled.div`
         flex-direction: column;
         justify-content: center;
         background: rgba(0,0,0, 0.2);
+        padding: 5px;
 
-    }
-    p:hover {
-        color: #4cd137;
-        cursor: pointer;
-        background: rgba(0,0,0, 0.5);
+        :hover {
+            color: #4cd137;
+            cursor: pointer;
+            background: rgba(0,0,0, 0.5);
+        }
     }
 
     h3 {
