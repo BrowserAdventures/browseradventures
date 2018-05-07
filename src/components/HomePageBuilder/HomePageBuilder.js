@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Wrapper} from '../styles/styles'
 
 
 const homePageBuilder=(props)=> (<Wrapper>
@@ -13,13 +14,6 @@ const homePageBuilder=(props)=> (<Wrapper>
     </Container>
 </Wrapper>)
 
-
-const Wrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-`
 
 const Container = styled.div`
     display: flex;
@@ -63,12 +57,6 @@ const Container = styled.div`
         justify-content: center;
         background: rgba(0,0,0, 0.2);
         padding: 5px;
-
-        :hover {
-            color: #4cd137;
-            cursor: pointer;
-            background: rgba(0,0,0, 0.5);
-        }
     }
 
     h3 {

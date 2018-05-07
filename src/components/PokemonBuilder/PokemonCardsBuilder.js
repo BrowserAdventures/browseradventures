@@ -44,7 +44,6 @@ const Cube = styled.div`
     transform-style: preserve-3d;
     animation: ${rotateCube} 10s linear infinite;
 
-
     div{
         position: absolute;
         width: 100px;
@@ -75,44 +74,6 @@ const Cube = styled.div`
         background: rgba(255,255,255, 0.3);
     }
 `
-
-
-
-const PokemonSprites = styled.div`
-
-    background: url(${props=> props.img});
-    background-color: transparent;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 200px;
-    height: 200px;
-
-    img {
-        width: 200px;
-        height: 200px;
-    }
-
-    @media (min-width: 992px) {
-        width: 160px;
-        height: 160px;
-    }
-`
-
-const Card = styled.div`
-    line-height: 150px;
-    display: block;
-    position: relative;
-    width: 250px;
-    height: 300px;
-    top: 30%;
-    left: 50%;
-    box-shadow: 0 0 5px rgba(0,0,0, 0.4);
-    background: grey;
-    cursor: pointer;
-    opacity: 1;
-    transition: all 0.5s;
-`
-
 
 
 export default pokemonCardsBuilder;

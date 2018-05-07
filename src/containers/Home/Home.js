@@ -5,7 +5,6 @@ import HomePageBuilder from '../../components/HomePageBuilder/HomePageBuilder'
 import googleMapImage from '../../assets/imgs/HomePageImages/googleMapImage.png'
 import flashcardsImage from '../../assets/imgs/HomePageImages/flashcards.png'
 import reptilianImage from '../../assets/imgs/HomePageImages/reptilian.jpg'
-import FlipBook from '../../assets/imgs/HomePageImages/reptilian.jpg'
 
 
 class Home extends Component

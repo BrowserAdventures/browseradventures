@@ -1,9 +1,8 @@
 const initialState =
 {
     pokemons: [],
-    displayedPokemons: [],
     isFetched: false,
-    currentSprites: {},
+    pokemon: {}
 }
 
 const pokemonReducer=(state = initialState, action)=>
@@ -23,19 +22,11 @@ const pokemonReducer=(state = initialState, action)=>
 
                 return pokemon
             })
-
-        return {
-            ...state,
-            pokemons,
-            displayedPokemons: pokemons.slice(0, 60),
-            isFetched: false,
-        }
-
-        case('RECEIVE_SPRITES'):
-
         return{
             ...state,
-            currentSprites: action.currentSprites
+
+            pokemons: pokemons.slice(0, 60),
+            isFetched: false,
         }
 
         case('POKEMON_CARD'):
@@ -47,8 +38,6 @@ const pokemonReducer=(state = initialState, action)=>
         default: return state
     }
 }
-
-
 
 
 

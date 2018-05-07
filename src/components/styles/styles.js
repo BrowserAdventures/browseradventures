@@ -6,8 +6,9 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: ${props=> props.content || 'center'};
     flex-direction: ${props=> props.direction};
+    justify-content: ${props=> props.justifyContent || 'center'};
+    align-content: ${props=> props.alignContent || 'center'};
     width: 100%;
     margin: ${props=> props.margin}%;
 `

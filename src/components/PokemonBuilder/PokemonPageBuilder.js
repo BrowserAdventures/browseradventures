@@ -48,6 +48,9 @@ const PokemonSprites = styled.div`
     width: 140px;
     height: 140px;
 
+    :hover {
+        background-color: rgba(255,255,255, 0.2);
+    }
     @media (min-width: 992px) {
         width: 160px;
         height: 160px;
