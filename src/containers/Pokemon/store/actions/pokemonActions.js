@@ -23,3 +23,22 @@ export const fetchPokemons=()=>
             .then(json => dispatch(receivePokemons(json)))
     }
 }
+
+
+const receiveSprites=(json)=>
+{
+    return{
+        type: 'RECEIVE_SPRITES',
+        currentSprites: json.front_default
+    }
+}
+
+export const fetchSprites=(url)=>
+{
+    return dispatch=> {
+
+        return fetch(`${url}`)
+            .then(response => response.json())
+            .then(json => dispatch(receiveSprites(json)))
+    }
+}

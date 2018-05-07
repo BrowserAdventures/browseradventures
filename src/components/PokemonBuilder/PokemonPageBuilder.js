@@ -8,7 +8,7 @@ const pokemonBuilder=(props)=>
         const imgURL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`
 
         return(
-        <PokemonItems key={i}>
+        <PokemonItems key={i} onClick={()=> props.open(pokemon)}>
             <PokemonSprites img={imgURL} />
             <PokemonNames>{pokemon.name}</PokemonNames>
         </PokemonItems>)

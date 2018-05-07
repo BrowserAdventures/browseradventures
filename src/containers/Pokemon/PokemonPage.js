@@ -12,6 +12,15 @@ class PokemonPage extends Component
     componentDidMount()
     {
         this.props.fetchPokemons()
+
+    }
+
+    openPokemon=(pokemon)=> {
+
+
+        this.props.openPokemon(pokemon)
+        this.props.history.push('/pokemoncards')
+        log(pokemon)
     }
 
     render()
@@ -20,26 +29,31 @@ class PokemonPage extends Component
 
         const pokemons = isFetched ?
             <p>Loading...</p> :
-            <PokemonPageBuilder pokemons={displayedPokemons} />
+            <PokemonPageBuilder
+                pokemons={displayedPokemons}
+                open={this.openPokemon}
+            />
 
         return(<Fragment>
             <Header
                 title='Pokemon Page' backButton
-                backButtonClicked={()=> this.props.history.push('/pokemoncards')}
+                backButtonClicked={()=> this.props.history.push('/')}
             />
             <ul>{pokemons}</ul>
+            {log(this.props.currentSprites)}
         </Fragment>)
     }
 }
 
 const mapStateToProps=(state)=>
 {
-    const {pokemons, displayedPokemons, isFetched} = state.pokemonReducer
+    const {pokemons, displayedPokemons, isFetched, currentSprites} = state.pokemonReducer
 
     return{
         pokemons: pokemons,
         displayedPokemons: displayedPokemons,
         isFetched: isFetched,
+        currentSprites: currentSprites,
     }
 }
 
@@ -47,6 +61,7 @@ const mapDispatchToProps=(dispatch)=>
 {
     return{
         fetchPokemons: ()=> dispatch(actions.fetchPokemons()),
+        openPokemon: (pokemon)=> dispatch({type: 'POKEMON_CARD', pokemon: pokemon}),
     }
 }
 

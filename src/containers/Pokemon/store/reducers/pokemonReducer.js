@@ -3,19 +3,20 @@ const initialState =
     pokemons: [],
     displayedPokemons: [],
     isFetched: false,
+    currentSprites: {},
 }
 
 const pokemonReducer=(state = initialState, action)=>
 {
     switch(action.type)
     {
-        case ('REQUEST_POKEMONS'):
+        case('REQUEST_POKEMONS'):
         return{
             ...state,
             isFetched: true
         }
 
-        case ('RECEIVE_POKEMONS'):
+        case('RECEIVE_POKEMONS'):
             let pokemons = action.pokemons.map(pokemon=> {
                 let { url } = pokemon
                 pokemon.id = url.substring(34, url.length - 1)
@@ -28,6 +29,19 @@ const pokemonReducer=(state = initialState, action)=>
             pokemons,
             displayedPokemons: pokemons.slice(0, 60),
             isFetched: false,
+        }
+
+        case('RECEIVE_SPRITES'):
+
+        return{
+            ...state,
+            currentSprites: action.currentSprites
+        }
+
+        case('POKEMON_CARD'):
+        return{
+            ...state,
+            pokemon: action.pokemon,
         }
 
         default: return state

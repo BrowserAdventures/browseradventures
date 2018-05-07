@@ -1,54 +1,116 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
+import {Wrapper} from '../styles/styles'
 
 
 const pokemonCardsBuilder=(props)=>
 {
-    return(<Wrapper margin='20px 0'>
-        <Flip>
-            <div>
-                <h3>{props.question}</h3>
-                <p>{props.answer}</p>
-            </div>
-            <div>
-                <h3>{props.title}</h3>
-                <p>{props.question}</p>
-            </div>
-        </Flip>
+
+    const frontImg = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.currentPokemon.id}.png`
+    const backImg = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${props.currentPokemon.id}.png`
+    const frontImg2 = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${props.currentPokemon.id}.png`
+    const backImg2 = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/${props.currentPokemon.id}.png`
+
+    return(<Wrapper>
+        <Container>
+            <Cube>
+            <div><img src={frontImg} /></div>
+            <div><img src={frontImg2} /></div>
+            <div><img src={backImg} /></div>
+            <div><img src={backImg2} /></div>
+            </Cube>
+        </Container>
     </Wrapper>)
 }
 
-const Wrapper = styled.div`
 
+const rotateCube = keyframes`
+    0% {
+        transform: rotateY(0);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
 `
 
-const Flip = styled.div`
-    width: 240px;
+const Container = styled.div`
+    width: 100px;
+    height: 100px;
+    perspective: 800px;
+`
+const Cube = styled.div`
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    animation: ${rotateCube} 10s linear infinite;
+
+
+    div{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 20%;
+    }
+
+    div:nth-child(1){
+        transform: translateZ(50px);
+        backface-visibility: hidden;
+        background: rgba(255,255,255, 0.3);
+    }
+    div:nth-child(2){
+        transform: rotateY(180deg) translateZ(50px);
+        backface-visibility: hidden;
+        background: rgba(255,255,255, 0.3);
+    }
+    div:nth-child(3){
+        transform: rotateY(-90deg) translateX(-50px);
+        transform-origin: left;
+        backface-visibility: hidden;
+        background: rgba(255,255,255, 0.3);
+    }
+    div:nth-child(4){
+        transform: rotateY(90deg) translateX(50px);
+        transform-origin: right;
+        backface-visibility: hidden;
+        background: rgba(255,255,255, 0.3);
+    }
+`
+
+
+
+const PokemonSprites = styled.div`
+
+    background: url(${props=> props.img});
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+
+    img {
+        width: 200px;
+        height: 200px;
+    }
+
+    @media (min-width: 992px) {
+        width: 160px;
+        height: 160px;
+    }
+`
+
+const Card = styled.div`
+    line-height: 150px;
+    display: block;
+    position: relative;
+    width: 250px;
     height: 300px;
-    text-align: center;
-
-    div:nth-child(even)  {
-
-        p{
-            margin-top: 25%;
-            padding: 0 20px;
-        }
-    }
-
-    div:nth-child(odd) {
-
-        p{
-            margin-top: 15%;
-            padding: 0 20px;
-        }
-    }
-
-    :hover div:nth-child(even)  {
-        transform: perspective(600px) rotateY(-180deg);
-    }
-    :hover div:nth-child(odd) {
-        transform: perspective(600px) rotateY(0deg);
-    }
+    top: 30%;
+    left: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0, 0.4);
+    background: grey;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.5s;
 `
 
 

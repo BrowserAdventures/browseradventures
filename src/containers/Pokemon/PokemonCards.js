@@ -16,25 +16,25 @@ class PokemonCards extends Component
 
     render()
     {
-        const {displayedPokemons, isFetched} = this.props
+        const {pokemon, isFetched} = this.props
 
         return(<Fragment>
             <Header
-                title='Pokemon Cards' backButton nextButton
-                backButtonClicked={()=> this.props.history.push('/')}
-                nextButtonClicked={()=> this.props.history.push('/pokemonpage')}
+                title={pokemon.name} backButton
+                backButtonClicked={()=> this.props.history.push('/pokemonpage')}
             />
-
+            <PokemonCardsBuilder currentPokemon={pokemon} />
+            {log(pokemon)}
         </Fragment>)
     }
 }
 
 const mapStateToProps=(state)=>
 {
-    const {pokemons, displayedPokemons, isFetched} = state.pokemonReducer
+    const {pokemon, displayedPokemons, isFetched} = state.pokemonReducer
 
     return{
-        pokemons: pokemons,
+        pokemon: pokemon,
         displayedPokemons: displayedPokemons,
         isFetched: isFetched,
     }

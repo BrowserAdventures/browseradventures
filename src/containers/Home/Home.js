@@ -38,7 +38,7 @@ class Home extends Component
             />
             <HomePageBuilder
                 title='Pokemon'
-                pathname='pokemoncards'
+                pathname='pokemonpage'
                 open={this.openPage}
                 instructions='A page full of pokemon!'
                 image='http://static.pokemonpets.com/images/monsters-images-800-800/94-Gengar.png'
