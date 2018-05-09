@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import * as actions from './store/actions/pictureBookActions'
 
-import Header from '../../components/UI/Header/Header2'
+import HeaderFlip from '../../components/UI/Header/HeaderFlip'
 import Modal from '../../components/UI/Modal/Modal'
 
 import PictureBookForm from '../../components/PictureBookBuilder/PictureBookForm'
@@ -36,10 +36,9 @@ class PictureBook extends Component
     render()
     {
         return(<div>
-            <Header
+            <HeaderFlip
                 title='Picture Book' instructions='Create a new Book?'
-                backButton
-                backButtonClicked={()=> this.props.history.push('/')}
+                backButton={()=> this.props.history.push('/')}
                 click={()=> this.setState({modal:true})}
             />
             <Modal show={this.state.modal} close={()=> this.setState({modal:false})}>

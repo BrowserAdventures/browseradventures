@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import * as actions from '../store/actions/bookPageActions'
 
-import Header from '../../../components/UI/Header/Header2'
+import HeaderFlip from '../../../components/UI/Header/HeaderFlip'
 import Modal from '../../../components/UI/Modal/Modal'
 
 import BookPageForm from '../../../components/PictureBookBuilder/BookPageBuilder/BookPageForm'
@@ -33,10 +33,9 @@ class BookPage extends Component
     render()
     {
         return(<div>
-            <Header
+            <HeaderFlip
                 title={this.passedState.title} instructions='add new description?'
-                backButton
-                backButtonClicked={()=> this.props.history.push('/picturebook')}
+                backButton={()=> this.props.history.push('/picturebook')}
                 click={()=> this.setState({modal:true})}
             />
             <Modal show={this.state.modal} close={()=> this.setState({modal:false})}>

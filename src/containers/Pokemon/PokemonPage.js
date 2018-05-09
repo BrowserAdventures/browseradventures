@@ -33,8 +33,8 @@ class PokemonPage extends Component
 
         return(<Fragment>
             <Header
-                title='Pokemon Page' backButton
-                backButtonClicked={()=> this.props.history.push('/')}
+                title='Pokemon Page'
+                backButton={()=> this.props.history.push('/')}
             />
             <ul>{displayPokemons}</ul>
         </Fragment>)

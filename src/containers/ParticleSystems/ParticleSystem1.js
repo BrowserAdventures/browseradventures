@@ -65,10 +65,9 @@ class ParticleSystem1 extends Component
 
     render()
     {
-        return(<Header
-            backButton nextButton
-            backButtonClicked={()=> this.props.history.push('/')}
-            nextButtonClicked={()=> this.props.history.push('/particlesystem2')}
+        return(<Header title='Particle System 1'
+            backButton={()=> this.props.history.push('/')}
+            nextButton={()=> this.props.history.push('/particlesystem2')}
         />)
     }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-
+import Header from '../../components/UI/Header/Header'
 
 
 
@@ -242,7 +242,10 @@ class ParticleSystem2 extends Component
 
     render()
     {
-        return <div />
+        return(<Header
+            backButton={()=> this.props.history.push('/particlesystem1')}
+            nextButton={()=> this.props.history.push('/particlesystem2')}
+        />)
     }
 }
 

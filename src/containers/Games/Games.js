@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 
+import {images} from '../../assets/imgs/GameImages'
+
 import Header from '../../components/UI/Header/Header'
 import HomePageBuilder from '../../components/HomePageBuilder/HomePageBuilder'
-import birdpoo from '../../assets/imgs/GameImages/birdpoo.png'
-import skeleton from '../../assets/imgs/GameImages/skeleton.png'
-import lasers from '../../assets/imgs/GameImages/lasers.png'
-import shooter from '../../assets/imgs/GameImages/shooter.png'
-import wizard from '../../assets/imgs/GameImages/wizard.png'
 
 
 class Games extends Component
@@ -29,35 +26,35 @@ class Games extends Component
                 pathname='bird-poo'
                 open={this.openPage}
                 instructions='use arrow keys to move bird and use spacebar to poop on people!'
-                image={birdpoo}
+                image={images['birdpoo.png']}
             />
             <HomePageBuilder
                 title='skeleton archer'
                 pathname='archer'
                 open={this.openPage}
                 instructions='use arrow keys to move and spacebar to shoot bow!'
-                image={skeleton}
+                image={images['skeleton.png']}
             />
             <HomePageBuilder
                 title='Exploding Lasers'
                 pathname='lasers'
                 open={this.openPage}
                 instructions='use arrow keys to move and up arrow to shoot laser!'
-                image={lasers}
+                image={images['lasers.png']}
             />
             <HomePageBuilder
                 title='Wizard Platformer'
                 pathname='wizard'
                 open={this.openPage}
                 instructions='use arrow keys to move and spacebar to cast firebolt!'
-                image={wizard}
+                image={images['wizard.png']}
             />
             <HomePageBuilder
                 title='Square Shooter'
                 pathname='shooter'
                 open={this.openPage}
                 instructions='use arrow keys to move and spacebar to shoot'
-                image={shooter}
+                image={images['shooter.png']}
             />
         </div>)
     }
