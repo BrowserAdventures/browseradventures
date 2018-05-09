@@ -1,10 +1,13 @@
 import React, { Component, Fragment } from 'react'
 
+import ParticleSystemHeader from './ParticleSystemHeader'
 import Header from '../../components/UI/Header/Header'
 import HomePageBuilder from '../../components/HomePageBuilder/HomePageBuilder'
+
 import googleMapImage from '../../assets/imgs/HomePageImages/googleMapImage.png'
 import flashcardsImage from '../../assets/imgs/HomePageImages/flashcards.png'
 import reptilianImage from '../../assets/imgs/HomePageImages/reptilian.jpg'
+
 
 
 class Home extends Component
@@ -17,6 +20,7 @@ class Home extends Component
     render()
     {
         return(<Fragment>
+            <ParticleSystemHeader />
             <Header
                 title='Home'
                 imgStore='greenFire'
@@ -43,10 +47,10 @@ class Home extends Component
                 image='http://static.pokemonpets.com/images/monsters-images-800-800/94-Gengar.png'
             />
             <HomePageBuilder
-                title='Animations'
-                pathname='boxgenerator'
+                title='Particle Systems'
+                pathname='particlesystem1'
                 open={this.openPage}
-                instructions='a collection of random animations'
+                instructions='play with different particle systems by flipping through the pages'
                 image='https://vignette.wikia.nocookie.net/denaruto3/images/4/42/Juubi.png/revision/latest?cb=20111121203959&path-prefix=de'
             />
         </Fragment>)
