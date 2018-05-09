@@ -11,8 +11,8 @@ class PokemonCards extends Component
     {
         return(<Fragment>
             <Header
-                title={this.props.pokemon.name} backButton
-                backButtonClicked={()=> this.props.history.push('/pokemonpage')}
+                title={this.props.pokemon.name}
+                backButton={()=> this.props.history.push('/pokemonpage')}
             />
             <PokemonCardsBuilder currentPokemon={this.props.pokemon} />
         </Fragment>)

@@ -14,19 +14,12 @@ class Home extends Component
         this.props.history.push(`/${pathname}`)
     }
 
-    clicked=()=>
-    {
-        var someStr = 'He said Hello, my name is Foo';
-        console.log(someStr.replace(/['']+/g, ''));
-    }
-
     render()
     {
         return(<Fragment>
             <ParticleSystemHeader />
             <Header
-                title='Home'
-                triangle
+                title='BrowserAdventrues'
             />
             <HomePageBuilder
                 title='Weather Map'

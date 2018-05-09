@@ -5,19 +5,24 @@ import {images} from '../../../assets/imgs/HeaderImages'
 
 const header=(props)=>
 {
-    const image = {
+    const buttonType = props.src
+    ||  props.backButton && images['arrow.png']
+    ||  props.nextButton && images['arrow.png']
+    ||  props.triangle && images['dropdown_arrow.png']
+    ||  props.greenFire && images['greenFire.png']
 
-        arrow: images['arrow.png'],
-        triangle: images['dropdown_arrow.png'],
-        greenFire: images['greenFire.png'],
-    }
 
-    const buttonType = props.src ||
-        props.backButton && images['arrow.png'] ||
-        props.nextButton && images['arrow.png'] ||
-        props.triangle && images['arrow.png'] ||
-        images['greenFire.png']
-
+    const showNextButton = props.nextButton ?
+        <Image
+            src={buttonType}
+            onClick={props.nextButton}
+            alt=''
+            nextButton={props.nextButton}
+        /> :
+        <Image
+            src={''}
+            alt=''
+        />
 
     return(<Wrapper noMargin={props.noMargin}>
         <Image
@@ -26,12 +31,7 @@ const header=(props)=>
             alt=''
         />
         <div onClick={props.click}><h3>{props.title}</h3></div>
-        <Image
-            src={buttonType}
-            onClick={props.nextButton}
-            alt=''
-            nextButton={props.nextButton}
-        />
+        {showNextButton}
     </Wrapper>)
 }
 
@@ -58,10 +58,8 @@ const Wrapper = styled.div`
 const Image = styled.img`
     width: 60px;
     height: 100%;
-    ${props=> props.rotate === 'backButton' ? 'transform: rotate(95deg)':
-              props.rotate === 'nextButton' && 'transform: rotate(-180deg)'
-    };
     ${props=> props.nextButton && 'transform: rotate(-180deg)'};
+
     :hover {
         cursor: pointer;
         background: rgba(0,0,0, 0.3);

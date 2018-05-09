@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import {images} from '../../../assets/imgs/HeaderImages'
 
 
-const header3=(props)=>
+const headerFlip=(props)=>
 {
     const buttonType = props.src
     ||  props.backButton && images['arrow.png']
@@ -12,16 +12,19 @@ const header3=(props)=>
     ||  props.triangle && images['dropdown_arrow.png']
     ||  images['greenFire.png']
 
-    const showNextButton = props.nextButton ? <NextImage
-        src={buttonType}
-        onClick={props.nextButton}
-        alt=''
-    /> :
-    <NextImage
-        src={''}
-        onClick={props.nextButton}
-        alt=''
-    />
+    const showNextButton = props.nextButton ?
+        <NextImage
+            src={buttonType}
+            onClick={props.nextButton}
+            alt=''
+            
+        /> :
+        <NextImage
+            src={''}
+            onClick={props.nextButton}
+            alt=''
+        />
+
     return(<Wrapper noMargin={props.noMargin}>
         <BackImage
             src={buttonType}
@@ -112,4 +115,4 @@ const Container = styled.div`
 `
 
 
-export default header3;
+export default headerFlip;
