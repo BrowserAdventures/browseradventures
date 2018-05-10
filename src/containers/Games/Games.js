@@ -18,7 +18,7 @@ class Games extends Component
         return(<div>
             <ParticleSystemHeader />
             <Header
-                title='Games' 
+                title='Games'
                 backButton={()=> this.props.history.push('/')}
             />
 
@@ -30,18 +30,18 @@ class Games extends Component
                 image={images['birdpoo.png']}
             />
             <HomePageBuilder
-                title='skeleton archer'
-                pathname='archer'
-                open={this.openPage}
-                instructions='use arrow keys to move and spacebar to shoot bow!'
-                image={images['skeleton.png']}
-            />
-            <HomePageBuilder
                 title='Exploding Lasers'
                 pathname='lasers'
                 open={this.openPage}
                 instructions='use arrow keys to move and up arrow to shoot laser!'
                 image={images['lasers.png']}
+            />
+            <HomePageBuilder
+                title='skeleton archer'
+                pathname='archer'
+                open={this.openPage}
+                instructions='use arrow keys to move and spacebar to shoot bow!'
+                image={images['skeleton.png']}
             />
             <HomePageBuilder
                 title='Wizard Platformer'

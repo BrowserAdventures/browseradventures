@@ -24,7 +24,6 @@ class App extends Component
     render()
     {
         return(<Layout>
-
             <Switch>
                 <Route path="/picturebook" component={PictureBook} />
                 <Route path="/bookpage" component={BookPage} />

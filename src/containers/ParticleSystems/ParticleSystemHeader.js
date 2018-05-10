@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 
-
-
-
 class Circle
 {
     constructor(ctx, radius, x, y)
@@ -193,12 +190,6 @@ class ParticleSystem2 extends Component
             id.vel.x = id.vel.x
         ;
 
-        // if(id.top <= 60 || id.bottom >= this.H) {
-        //     id.vel.y *= -0.9;
-        //     id.vel.x *= this.plusMinus(randomNum);
-        //     id.y = this.H-id.r;
-        //     id.color = `rgba(${randomColor},${randomColor},255)`
-        // }
         if(id.top <= 0) {
             id.vel.y *= -0.9;
             id.vel.x *= 0.9;
@@ -214,13 +205,7 @@ class ParticleSystem2 extends Component
             id.color = `rgba(${randomColor},${randomColor},255)`
         }
 
-        // if(this.player.y > this.H/2){
-        //     id.vel.y -= 0.5;
-        // } else{
-        //     id.vel.y += 0.5;
-        // }
-        //id.vel.x += this.plusMinus(0.5)
-        //this.plusMinus(0.5, id.vel.y)
+
         id.vel.y += 0.5
     }
 

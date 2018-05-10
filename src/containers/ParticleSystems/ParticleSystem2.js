@@ -4,7 +4,6 @@ import Header from '../../components/UI/Header/Header'
 
 
 
-
 class Circle
 {
     constructor(ctx, radius, x, y)
@@ -243,6 +242,7 @@ class ParticleSystem2 extends Component
     render()
     {
         return(<Header
+            title='Particle System 2'
             backButton={()=> this.props.history.push('/particlesystem1')}
             nextButton={()=> this.props.history.push('/particlesystem2')}
         />)
