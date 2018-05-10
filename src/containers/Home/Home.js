@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 
 import {images} from '../../assets/imgs/HomePageImages'
 
-import ParticleSystemHeader from './ParticleSystemHeader'
+import ParticleSystemHeader from '../ParticleSystems/ParticleSystemHeader'
 import Header from '../../components/UI/Header/Header'
 import HomePageBuilder from '../../components/HomePageBuilder/HomePageBuilder'
 

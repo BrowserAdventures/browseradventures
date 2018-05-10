@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import {images} from '../../assets/imgs/GameImages'
-
+import ParticleSystemHeader from '../ParticleSystems/ParticleSystemHeader'
 import Header from '../../components/UI/Header/Header'
 import HomePageBuilder from '../../components/HomePageBuilder/HomePageBuilder'
 
@@ -16,9 +16,10 @@ class Games extends Component
     render()
     {
         return(<div>
+            <ParticleSystemHeader />
             <Header
-                title='Games' backButton
-                backButtonClicked={()=> this.props.history.push('/')}
+                title='Games' 
+                backButton={()=> this.props.history.push('/')}
             />
 
             <HomePageBuilder
