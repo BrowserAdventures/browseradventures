@@ -10,7 +10,7 @@ import PokemonPageBuilder from '../../components/PokemonBuilder/PokemonPageBuild
 
 class PokemonPage extends Component
 {
-    componentDidMount()
+    componentWillMount()
     {
         this.props.fetchPokemons()
     }

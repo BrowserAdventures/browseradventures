@@ -6,28 +6,14 @@ import {images} from '../../../assets/imgs/HeaderImages'
 
 const headerFlip=(props)=>
 {
-    const buttonType = props.src
-    ||  props.backButton && images['arrow.png']
-    ||  props.nextButton && images['arrow.png']
-    ||  props.triangle && images['dropdown_arrow.png']
-    ||  images['greenFire.png']
+    const backButtonType = props.backButton && images['arrow.png']
 
-    const showNextButton = props.nextButton ?
-        <NextImage
-            src={buttonType}
-            onClick={props.nextButton}
-            alt=''
-            
-        /> :
-        <NextImage
-            src={''}
-            onClick={props.nextButton}
-            alt=''
-        />
+    const nextButtonType = props.nextButton && images['arrow.png']
+
 
     return(<Wrapper noMargin={props.noMargin}>
-        <BackImage
-            src={buttonType}
+        <Image
+            src={backButtonType}
             onClick={props.backButton}
             alt=''
         />
@@ -35,7 +21,12 @@ const headerFlip=(props)=>
             <div onClick={props.click}><h3>{props.instructions}</h3></div>
             <div><h3>{props.title}</h3></div>
         </Container>
-        {showNextButton}
+        <Image
+            src={nextButtonType}
+            onClick={props.nextButton}
+            nextButton={nextButtonType}
+            alt=''
+        />
     </Wrapper>)
 }
 
@@ -46,27 +37,13 @@ const Wrapper = styled.div`
     margin-bottom: ${props=> props.noMargin || '20px'};
     display: flex;
     justify-content: space-between;
-
-    ${Container} {
-        background: rgba(0,0,0, 0.7);
-    }
-
-
-`
-const BackImage = styled.img`
-    width: 60px;
-    height: 100%;
-
-    :hover {
-        cursor: pointer;
-        background: rgba(0,0,0, 0.2);
-    }
+    background: rgba(0,0,0, 0.7);
 `
 
-const NextImage = styled.img`
+const Image = styled.img`
     width: 60px;
     height: 100%;
-    transform: rotate(-180deg);
+    ${props=> props.nextButton && 'transform: rotate(-180deg)'};
 
     :hover {
         cursor: pointer;

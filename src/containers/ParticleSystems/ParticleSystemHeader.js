@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 
 
 class Circle
@@ -46,9 +45,9 @@ class Particle extends Circle
         super(ctx, 2, player.x, player.y)
         this.counter = 0;
         this.numY = Math.floor(Math.random()*5) + 1;
-        this.numY *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+        this.numY *= Math.floor(Math.random()*2) === 1 ? 1 : -1;
         this.numX = Math.floor(Math.random()*5) + 1;
-        this.numX *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+        this.numX *= Math.floor(Math.random()*2) === 1 ? 1 : -1;
         this.vel = {
             x: this.numX,
             y: this.numY,
@@ -120,7 +119,7 @@ class ParticleSystem2 extends Component
             this.particles1[i] = new Particle(this.ctx, this.player)
         }
 
-        for(var i = 0; i < 100; i++) {
+        for( i = 0; i < 100; i++) {
             this.particles2[i] = new Particle(this.ctx, this.player)
         }
     }
@@ -147,7 +146,7 @@ class ParticleSystem2 extends Component
             }
         }
 
-        for(var i = 0; i < this.particles2.length; i++)
+        for(i = 0; i < this.particles2.length; i++)
         {
             this.particles2[i].init(DT)
             this.boundaryDetectionGravity(this.particles2[i])
@@ -211,7 +210,7 @@ class ParticleSystem2 extends Component
 
     plusMinus=(number)=>
     {
-        return number *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+        return number *= Math.floor(Math.random()*2) === 1 ? 1 : -1;
     }
 
     componentDidMount(lastTime)

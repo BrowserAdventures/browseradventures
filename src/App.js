@@ -5,7 +5,6 @@ import Layout from './components/Layout/Layout'
 import Home from './containers/Home/Home'
 
 import Games from './containers/Games/Games'
-import BirdPoo from './containers/Games/BirdPoo/BirdPoo'
 
 import PictureBook from './containers/PictureBook/PictureBook'
 import BookPage from './containers/PictureBook/BookPage/BookPage'
@@ -31,7 +30,6 @@ class App extends Component
                 <Route path="/weathermap" component={WeatherMap} />
 
                 <Route path="/games" component={Games} />
-                <Route path="/birdpoo" component={BirdPoo} />
 
                 <Route path="/pokemonpage" component={PokemonPage} />
                 <Route path="/pokemoncards" component={PokemonCards} />

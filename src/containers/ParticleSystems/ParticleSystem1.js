@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import Header from '../../components/UI/Header/Header'
 
 
@@ -47,10 +46,10 @@ class Particle extends Circle
     {
         super(ctx, 2, player.x, player.y)
         this.counter = 0;
-        this.numY = Math.floor(Math.random()*10) + 1;
-        this.numY *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+        this.numY = Math.floor(Math.random()*5) + 1;
+        this.numY *= Math.floor(Math.random()*2) === 1 ? 1 : -1;
         this.numX = Math.floor(Math.random()*5) + 1;
-        this.numX *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+        this.numX *= Math.floor(Math.random()*2) === 1 ? 1 : -1;
         this.vel = {
             x: this.numX,
             y: this.numY,
@@ -122,7 +121,7 @@ class ParticleSystem1 extends Component
             this.particles1[i] = new Particle(this.ctx, this.player)
         }
 
-        for(var i = 0; i < 500; i++) {
+        for(i = 0; i < 1000; i++) {
             this.particles2[i] = new Particle(this.ctx, this.player)
 
         }
@@ -138,12 +137,13 @@ class ParticleSystem1 extends Component
             this.particles1[i].init(DT)
             this.particles1[i].r = 5;
 
-            if(this.boundaryDelete(this.particles1[i])) {
+            if(this.boundaryDetection(this.particles1[i])) {
                 var randomColor = Math.floor(Math.random()*255) + 1;
                 this.particles1[i].color = `rgba(255,${randomColor},25)`
                 this.particles1[i].vel.x = -this.particles1[i].vel.x;
                 this.particles1[i].vel.y = -this.particles1[i].vel.y
-                this.particles1[i].r = 10;
+                this.particles1[i].r = 6;
+
                 if(this.particles1[i].counter > 150) {
                     this.particles1.splice(i, 1)
                     this.particles1.push(new Particle(this.ctx, this.player))
@@ -151,18 +151,18 @@ class ParticleSystem1 extends Component
             }
         }
 
-        for(var i = 0; i < this.particles2.length; i++)
+        for(i = 0; i < this.particles2.length; i++)
         {
             this.particles2[i].init(DT)
             this.boundaryDetectionGravity(this.particles2[i])
-            if(this.boundaryDelete(this.particles2[i]) && this.particles2[i].counter > 500) {
+            if(this.boundaryDetection(this.particles2[i]) && this.particles2[i].counter > 250) {
                 this.particles2.splice(i, 1)
                 this.particles2.push(new Particle(this.ctx, this.player))
             }
         }
     }
 
-    boundaryDelete=(id)=>
+    boundaryDetection=(id)=>
     {
         return id.left <= 0
             || id.right >= this.W
@@ -170,23 +170,9 @@ class ParticleSystem1 extends Component
             || id.bottom >= this.H
     }
 
-    boundaryDetection=(id)=>
-    {
-        id.left < 0 || id.right > this.W ?
-            id.vel.x = -id.vel.x :
-            id.vel.x = id.vel.x
-        ;
-
-        id.top <= 60 || id.bottom > this.H ?
-            id.vel.y = -id.vel.y:
-            id.vel.y = id.vel.y
-        ;
-    }
-
     boundaryDetectionGravity=(id)=>
     {
         var randomNum = Math.floor(Math.random()*(0.9 -0)+0);
-         //randomNum *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
         var randomColor = Math.floor(Math.random()*255) + 1;
 
         id.left < 0 || id.right > this.W ?
@@ -194,12 +180,6 @@ class ParticleSystem1 extends Component
             id.vel.x = id.vel.x
         ;
 
-        // if(id.top <= 60 || id.bottom >= this.H) {
-        //     id.vel.y *= -0.9;
-        //     id.vel.x *= this.plusMinus(randomNum);
-        //     id.y = this.H-id.r;
-        //     id.color = `rgba(${randomColor},${randomColor},255)`
-        // }
         if(id.top <= 60) {
             id.vel.y *= -0.9;
             id.vel.x *= this.plusMinus(randomNum);
@@ -219,12 +199,11 @@ class ParticleSystem1 extends Component
             id.vel.y += 0.5;
         }
         id.vel.x += this.plusMinus(0.5)
-        //this.plusMinus(0.5, id.vel.y)
     }
 
     plusMinus=(number)=>
     {
-        return number *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+        return number *= Math.floor(Math.random()*2) === 1 ? 1 : -1;
     }
 
     componentDidMount(lastTime)
@@ -241,7 +220,8 @@ class ParticleSystem1 extends Component
 
     render()
     {
-        return(<Header title='Particle System 1'
+        return(<Header
+            title='Particle System 1'
             backButton={()=> this.props.history.push('/')}
             nextButton={()=> this.props.history.push('/particlesystem2')}
         />)

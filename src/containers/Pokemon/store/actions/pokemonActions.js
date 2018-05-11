@@ -24,3 +24,23 @@ export const fetchPokemons=()=>
             .then(json => dispatch(receivePokemons(json)))
     }
 }
+
+
+const receivePokemonStats=(json)=>
+{
+    return{
+        type: 'RECEIVE_POKEMON_STATS',
+        pokemonStats: json.results
+    }
+}
+
+export const fetchPokemonStats=(id)=>
+{
+    return dispatch=> {
+        dispatch(requestPokemons())
+
+        return fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+            .then(response => response.json())
+            .then(json => dispatch(receivePokemonStats(json)))
+    }
+}

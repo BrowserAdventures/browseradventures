@@ -30,7 +30,6 @@ class PictureBook extends Component
             pathname: '/bookpage',
             state: book
         })
-        console.log(book)
     }
 
     render()

@@ -14,10 +14,10 @@ const pokemonCardsBuilder=(props)=>
     return(<Wrapper>
         <Container>
             <Cube>
-            <div><img src={frontImg} /></div>
-            <div><img src={frontImg2} /></div>
-            <div><img src={backImg} /></div>
-            <div><img src={backImg2} /></div>
+            <div><img src={frontImg} alt='' /></div>
+            <div><img src={frontImg2} alt='' /></div>
+            <div><img src={backImg} alt='' /></div>
+            <div><img src={backImg2} alt='' /></div>
             </Cube>
         </Container>
     </Wrapper>)

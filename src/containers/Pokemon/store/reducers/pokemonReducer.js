@@ -2,7 +2,8 @@ const initialState =
 {
     pokemons: [],
     isFetched: false,
-    pokemon: {}
+    pokemon: {},
+    pokemonStats: [],
 }
 
 const pokemonReducer=(state = initialState, action)=>
@@ -24,7 +25,6 @@ const pokemonReducer=(state = initialState, action)=>
             })
         return{
             ...state,
-
             pokemons: pokemons.slice(0, 60),
             isFetched: false,
         }
@@ -33,6 +33,13 @@ const pokemonReducer=(state = initialState, action)=>
         return{
             ...state,
             pokemon: action.pokemon,
+        }
+
+        case('RECEIVE_POKEMON_STATS'):
+        return{
+            ...state,
+            pokemonStats: action.pokemonStats,
+            isFetched: false,
         }
 
         default: return state

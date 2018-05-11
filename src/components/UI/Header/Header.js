@@ -3,35 +3,27 @@ import styled from 'styled-components'
 
 import {images} from '../../../assets/imgs/HeaderImages'
 
+
 const header=(props)=>
 {
-    const buttonType = props.src
-    ||  props.backButton && images['arrow.png']
-    ||  props.nextButton && images['arrow.png']
-    ||  props.triangle && images['dropdown_arrow.png']
-    ||  props.greenFire && images['greenFire.png']
+    const backButtonType = props.backButton && images['arrow.png']
 
+    const nextButtonType = props.nextButton && images['arrow.png']
 
-    const showNextButton = props.nextButton ?
-        <Image
-            src={buttonType}
-            onClick={props.nextButton}
-            alt=''
-            nextButton={props.nextButton}
-        /> :
-        <Image
-            src={''}
-            alt=''
-        />
 
     return(<Wrapper noMargin={props.noMargin}>
         <Image
-            src={buttonType}
+            src={backButtonType}
             onClick={props.backButton}
             alt=''
         />
         <div onClick={props.click}><h3>{props.title}</h3></div>
-        {showNextButton}
+        <Image
+            src={nextButtonType}
+            onClick={props.nextButton}
+            nextButton={nextButtonType}
+            alt=''
+        />
     </Wrapper>)
 }
 

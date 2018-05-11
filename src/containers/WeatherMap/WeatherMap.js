@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react'
-import { connect } from 'react-redux'
 
 import HeaderFlip from '../../components/UI/Header/HeaderFlip'
 import Modal from '../../components/UI/Modal/Modal'
@@ -7,9 +6,9 @@ import {
     Wrapper, FlexBasis, MapContainer, Titleh3
 } from '../../components/styles/styles'
 
-import GoogleMapBuilder from '../../components/WeatherMapBuilder/GoogleMapBuilder/GoogleMapBuilder'
-import WeatherForm from '../../components/WeatherMapBuilder/WeatherBuilder/WeatherForm'
-import WeatherDisplay from '../../components/WeatherMapBuilder/WeatherBuilder/WeatherDisplay'
+import GoogleMapBuilder from '../../components/MapBuilder/GoogleMapBuilder/GoogleMapBuilder'
+import WeatherForm from '../../components/MapBuilder/WeatherBuilder/WeatherForm'
+import WeatherDisplay from '../../components/MapBuilder/WeatherBuilder/WeatherDisplay'
 
 
 class WeatherMap extends Component

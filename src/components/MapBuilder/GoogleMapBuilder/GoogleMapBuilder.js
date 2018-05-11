@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import {compose, withProps} from "recompose"
 import {GoogleMap, Marker, withGoogleMap, withScriptjs} from "react-google-maps"
 

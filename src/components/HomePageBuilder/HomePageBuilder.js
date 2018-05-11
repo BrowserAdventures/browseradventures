@@ -22,8 +22,8 @@ const Container = styled.div`
     background: rgba(0,0,0,0.7);
     border-radius: 5px;
     border: 1px solid #2ecc71;
-    width: 350px;
-    height: 500px;
+    max-width: 350px;
+    max-height: 500px;
     text-align: center;
     padding:  0 20px;
     margin-bottom: 20px;
