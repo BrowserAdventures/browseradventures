@@ -41,11 +41,6 @@ const Wrapper = styled.div`
         text-align: center;
         color: white;
     }
-    div:hover {
-        color: #44bd32;
-        cursor: pointer;
-        background: rgba(0,0,0, 0.3);
-    }
 `
 const Image = styled.img`
     width: 60px;

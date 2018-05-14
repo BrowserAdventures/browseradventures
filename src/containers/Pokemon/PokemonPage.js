@@ -27,7 +27,7 @@ class PokemonPage extends Component
     render()
     {
         const {
-            displayedPokemons, isFetched, showModal, openCloseModal, openModal,
+            displayedPokemons, isFetched, showModal, openCloseModal,
             searchPokemon,
         } = this.props
 

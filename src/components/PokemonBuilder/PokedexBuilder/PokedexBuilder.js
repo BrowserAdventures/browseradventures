@@ -6,7 +6,7 @@ import Arrow from '../../../assets/imgs/HeaderImages/dropdown_arrow.png'
 
 const pokedexBuilder=(props)=>
 {
-    let types, stats, abilities, bodyMetrics
+    let types, stats, abilities, bodyMetrics, pokedexDisplay
 
     if(props.pokemonStats.stats !== undefined)
     {
@@ -18,30 +18,29 @@ const pokedexBuilder=(props)=>
         </Bar>))
 
         abilities = props.pokemonStats.abilities.map((self, i)=> (<Wrapper key={i}
-            margin='-3px 30px' justifyContent='space-between' width='85%'>
+            margin='0px 30px' justifyContent='space-between' width='85%'>
                 <div style={{color: '#44bd32'}}>Ability: </div>
                 <div style={{color: '#44bd32'}}>{self.ability.name}</div>
         </Wrapper>))
 
         types = props.pokemonStats.types.map((self, i)=> (<Wrapper key={i}
-            margin='-3px 30px' justifyContent='space-between' width='85%'>
+            margin='0px 30px' justifyContent='space-between' width='85%'>
             <div style={{color: '#44bd32'}}>Type: </div>
             <div style={{color: '#44bd32'}}>{self.type.name}</div>
         </Wrapper>))
 
         bodyMetrics = <Fragment>
-            <Wrapper margin='-3px 30px' justifyContent='space-between' width='85%'>
+            <Wrapper margin='0px 30px' justifyContent='space-between' width='85%'>
                 <div style={{color: '#44bd32'}}>Height: </div>
                 <div style={{color: '#44bd32'}}>{props.pokemonStats.height}</div>
             </Wrapper>
-            <Wrapper margin='-3px 30px' justifyContent='space-between' width='85%'>
+            <Wrapper margin='0px 30px' justifyContent='space-between' width='85%'>
                 <div style={{color: '#44bd32'}}>Weight: </div>
                 <div style={{color: '#44bd32'}}>{props.pokemonStats.weight}</div>
             </Wrapper>
         </Fragment>
     }
 
-    let pokedexDisplay;
     switch(props.display)
     {
         case('stats'):
@@ -50,6 +49,8 @@ const pokedexBuilder=(props)=>
         case('traits'):
             pokedexDisplay = [abilities, types, bodyMetrics]
         break
+
+        default: return pokedexDisplay;
     }
 
 

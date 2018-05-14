@@ -50,11 +50,3 @@ export const fetchPokemonStats=(id)=>
             .then(json => dispatch(receivePokemonStats(json)))
     }
 }
-
-const filterPokemons=(input)=>
-{
-    return{
-        type: types.FILTER_POKEMONS,
-        searchTerm: input
-    }
-}

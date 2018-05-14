@@ -9,7 +9,6 @@ const initialState =
     pokemonTerm: '',
     pokedexScreen: 'traits',
     isFetched: false,
-    isPokedexFetched: false,
     showModal: false,
 }
 

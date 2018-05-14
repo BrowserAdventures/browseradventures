@@ -20,11 +20,6 @@ class Pokedex extends Component
         this.props.setPokedexPage()
     }
 
-    nextButton=()=>
-    {
-
-    }
-
     render()
     {
         const {
@@ -36,6 +31,7 @@ class Pokedex extends Component
             <PokedexBuilder
                 pokemonStats={pokemonStats}
                 display={pokedexScreen}
+                isFetched={isFetched}
                 backButton={changePokedexDisplay}
                 nextButton={changePokedexDisplay}
             >
@@ -48,7 +44,6 @@ class Pokedex extends Component
             <Header
                 title={this.props.pokemon.name}
                 backButton={()=> this.props.history.push('/pokemonpage')}
-                click={this.test}
             />
             {pokedex}
         </Fragment>)
@@ -64,6 +59,7 @@ const mapStateToProps=(state)=>
         pokedexScreen: state.pokemonReducer.pokedexScreen,
     }
 }
+
 const mapDispatchToProps=(dispatch)=>
 {
     return{
@@ -75,6 +71,5 @@ const mapDispatchToProps=(dispatch)=>
         setPokedexPage: ()=> dispatch({type: types.SET_POKEDEX_PAGE})
     }
 }
-let log=(id)=> console.log(id)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Pokedex);
