@@ -1,45 +1,84 @@
+import * as types from '../types/types'
+
 const initialState =
 {
     pokemons: [],
-    isFetched: false,
+    displayedPokemons: [],
     pokemon: {},
     pokemonStats: [],
+    pokemonTerm: '',
+    pokedexScreen: 'traits',
+    isFetched: false,
+    isPokedexFetched: false,
+    showModal: false,
 }
 
 const pokemonReducer=(state = initialState, action)=>
 {
     switch(action.type)
     {
-        case('REQUEST_POKEMONS'):
+        case(types.OPEN_CLOSE_MODAL):
         return{
             ...state,
-            isFetched: true
+            showModal: !state.showModal,
         }
 
-        case('RECEIVE_POKEMONS'):
+        case(types.REQUEST_POKEMONS):
+        return{
+            ...state,
+            isFetched: true,
+        }
+
+        case(types.RECEIVE_POKEMONS):
             let pokemons = action.pokemons.map(pokemon=> {
-                let { url } = pokemon
+                let {url} = pokemon
                 pokemon.id = url.substring(34, url.length - 1)
 
                 return pokemon
             })
         return{
             ...state,
-            pokemons: pokemons.slice(0, 60),
+            pokemons: pokemons,
+            displayedPokemons: pokemons.slice(0, 100),
             isFetched: false,
         }
 
-        case('POKEMON_CARD'):
+        case(types.FILTER_POKEMONS):
+            let displayedPokemons = state.pokemons.filter(pokemon=> {
+                if(pokemon.name.includes(action.searchTerm.toLowerCase()))
+                    return true
+                return false
+            }).slice(0, 100)
+
+        return{
+            ...state,
+            displayedPokemons: displayedPokemons
+        }
+
+        case(types.SEND_POKEMON_CARD):
         return{
             ...state,
             pokemon: action.pokemon,
         }
 
-        case('RECEIVE_POKEMON_STATS'):
+        case(types.RECEIVE_POKEMON_STATS):
         return{
             ...state,
             pokemonStats: action.pokemonStats,
+            stats: action.stats,
             isFetched: false,
+        }
+
+        case(types.POKEDEX_SCREEN):
+        return{
+            ...state,
+            pokedexScreen: action.page
+        }
+
+        case(types.SET_POKEDEX_PAGE):
+        return{
+            ...state,
+            pokedexScreen: 'traits'
         }
 
         default: return state

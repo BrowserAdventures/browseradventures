@@ -12,7 +12,7 @@ import BookPage from './containers/PictureBook/BookPage/BookPage'
 import WeatherMap from './containers/WeatherMap/WeatherMap'
 
 import PokemonPage from './containers/Pokemon/PokemonPage'
-import PokemonCards from './containers/Pokemon/PokemonCards'
+import Pokedex from './containers/Pokemon/Pokedex'
 
 import ParticleSystem1 from './containers/ParticleSystems/ParticleSystem1'
 import ParticleSystem2 from './containers/ParticleSystems/ParticleSystem2'
@@ -32,7 +32,7 @@ class App extends Component
                 <Route path="/games" component={Games} />
 
                 <Route path="/pokemonpage" component={PokemonPage} />
-                <Route path="/pokemoncards" component={PokemonCards} />
+                <Route path="/pokedex" component={Pokedex} />
 
                 <Route path="/particlesystem1" component={ParticleSystem1} />
                 <Route path="/particlesystem2" component={ParticleSystem2} />

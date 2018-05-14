@@ -1,15 +1,16 @@
+import * as types from '../types/types'
 
 const requestPokemons=()=>
 {
     return{
-        type: 'REQUEST_POKEMONS'
+        type: types.REQUEST_POKEMONS
     }
 }
 
 const receivePokemons=(json)=>
 {
     return{
-        type: 'RECEIVE_POKEMONS',
+        type: types.RECEIVE_POKEMONS,
         pokemons: json.results
     }
 }
@@ -25,12 +26,17 @@ export const fetchPokemons=()=>
     }
 }
 
-
 const receivePokemonStats=(json)=>
 {
     return{
-        type: 'RECEIVE_POKEMON_STATS',
-        pokemonStats: json.results
+        type: types.RECEIVE_POKEMON_STATS,
+        pokemonStats: {
+            types: json.types,
+            height: json.height,
+            weight: json.weight,
+            stats: json.stats,
+            abilities: json.abilities
+        },
     }
 }
 
@@ -42,5 +48,13 @@ export const fetchPokemonStats=(id)=>
         return fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
             .then(response => response.json())
             .then(json => dispatch(receivePokemonStats(json)))
+    }
+}
+
+const filterPokemons=(input)=>
+{
+    return{
+        type: types.FILTER_POKEMONS,
+        searchTerm: input
     }
 }

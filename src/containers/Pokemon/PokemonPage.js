@@ -1,11 +1,15 @@
 import React, {Component, Fragment} from 'react'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 
 import * as actions from './store/actions/pokemonActions'
+import * as types from './store/types/types'
 
-import Header from '../../components/UI/Header/Header'
+import HeaderFlip from '../../components/UI/Header/HeaderFlip'
+import Modal from '../../components/UI/Modal/Modal'
 import LoadingAnimation from '../../components/UI/LoadingAnimation/LoadingAnimation'
+
 import PokemonPageBuilder from '../../components/PokemonBuilder/PokemonPageBuilder'
+import SearchPokemon from '../../components/PokemonBuilder/SearchPokemon'
 
 
 class PokemonPage extends Component
@@ -17,47 +21,70 @@ class PokemonPage extends Component
 
     openPokemon=(pokemon)=> {
         this.props.openPokemon(pokemon)
-        this.props.history.push('/pokemoncards')
+        this.props.history.push('/pokedex')
     }
 
     render()
     {
-        const {pokemons, isFetched} = this.props
+        const {
+            displayedPokemons, isFetched, showModal, openCloseModal, openModal,
+            searchPokemon,
+        } = this.props
 
-        const displayPokemons = isFetched ?
+        const showPokemons = isFetched ?
             <LoadingAnimation /> :
             <PokemonPageBuilder
-                pokemons={pokemons}
+                pokemons={displayedPokemons}
                 open={this.openPokemon}
             />
 
         return(<Fragment>
-            <Header
-                title='Pokemon Page'
+            <HeaderFlip
+                title='Pokemon Page' instructions='Search for a Pokemon?'
+                click={openCloseModal}
                 backButton={()=> this.props.history.push('/')}
             />
-            <ul>{displayPokemons}</ul>
+            <Modal show={showModal} close={openCloseModal}>
+                <SearchPokemon onChange={searchPokemon} />
+            </Modal>
+            <ul>{showPokemons}</ul>
         </Fragment>)
     }
 }
 
 const mapStateToProps=(state)=>
 {
-    const {pokemons, isFetched} = state.pokemonReducer
+    const {
+        pokemons, displayedPokemons, isFetched, showModal, searchTerm,
+    } = state.pokemonReducer
 
     return{
         pokemons: pokemons,
+        displayedPokemons: displayedPokemons,
         isFetched: isFetched,
+        showModal: showModal,
+        searchTerm: searchTerm,
     }
 }
 
 const mapDispatchToProps=(dispatch)=>
 {
     return{
+        openCloseModal: ()=> dispatch({type: types.OPEN_CLOSE_MODAL}),
         fetchPokemons: ()=> dispatch(actions.fetchPokemons()),
-        openPokemon: (pokemon)=> dispatch({type: 'POKEMON_CARD', pokemon: pokemon}),
+        openPokemon: (pokemon)=> dispatch({
+            type: types.SEND_POKEMON_CARD,
+            pokemon: pokemon
+        }),
+        searchPokemon: (input)=> dispatch({
+            type: types.FILTER_POKEMONS,
+            searchTerm: input
+        }),
     }
 }
+
+
+
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonPage);

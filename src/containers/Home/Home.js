@@ -36,10 +36,10 @@ class Home extends Component
                 image={images['reptilian.jpg']}
             />
             <HomePageBuilder
-                title='Pokemon'
+                title='Pokedex'
                 pathname='pokemonpage'
                 open={this.openPage}
-                instructions='A page full of pokemon!'
+                instructions='click header to search for a pokemon and select it to get pokedex!'
                 image={images['pokemon.png']}
             />
             <HomePageBuilder

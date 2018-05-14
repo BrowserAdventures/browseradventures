@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
-import {Wrapper} from '../styles/styles'
+import {Wrapper} from '../../styles/styles'
 
 
-const pokemonCardsBuilder=(props)=>
+const pokemonCube=(props)=>
 {
 
     const frontImg = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.currentPokemon.id}.png`
@@ -37,6 +37,7 @@ const Container = styled.div`
     width: 100px;
     height: 100px;
     perspective: 800px;
+    margin: 20px 0px;
 `
 const Cube = styled.div`
     width: 100px;
@@ -48,7 +49,7 @@ const Cube = styled.div`
         position: absolute;
         width: 100px;
         height: 100px;
-        top: 20%;
+
     }
 
     div:nth-child(1){
@@ -76,4 +77,4 @@ const Cube = styled.div`
 `
 
 
-export default pokemonCardsBuilder;
+export default pokemonCube;

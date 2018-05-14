@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 
 
-
 export const Wrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex-direction: ${props=> props.direction};
     justify-content: ${props=> props.justifyContent || 'center'};
     align-content: ${props=> props.alignContent || 'center'};
-    width: 100%;
-    margin: ${props=> props.margin}%;
+    width: ${props=> props.width || '100%'};
+    height: ${props=> props.height}px;
+    margin: ${props=> props.margin};
+    background: ${props=> props.background};
 `
 
 export const FlexBasis = styled.div`
