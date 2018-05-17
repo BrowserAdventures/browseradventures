@@ -42,6 +42,10 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     background: rgba(0,0,0, 0.7);
+
+    span {
+        width: 60px;
+    }
 `
 
 const Image = styled.img`

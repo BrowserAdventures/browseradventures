@@ -6,25 +6,36 @@ import Toolbar from './Toolbar/Toolbar'
 
 const layout=(props)=> (<Wrapper background={props.background}>
     <Toolbar />
-    <Content {...props} />
+    <Border />
+        <Content {...props} />
+    <Border />
 </Wrapper>)
 
 
 const Wrapper = styled.div`
     margin-top: -4px;
-    background: rgba(0,0,0, 0.5);
     min-height: 100vh;
+    display: flex;
 `
-const Content = styled.main`
-    background: ${props=> props.background || 'rgba(255,255,255, 0.7)'};
-    margin-left: 50px;
-    margin-right: 50px;
+const Border = styled.div`
     min-height: 100vh;
+    width: 50px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    background: rgba(0,0,0, 0.5);
 
     @media (max-width: 500px) {
-        margin-left: 0px;
-        margin-right: 0px;
+        width: 0px;
     }
+`
+const Content = styled.main`
+    background: ${props=> props.background || 'rgba(255,255,255, 0.75)'};
+    margin-left: 0px;
+    margin-right: 0px;
+    min-height: 100vh;
+    width: 100%;
+
+
 `
 
 export default layout;

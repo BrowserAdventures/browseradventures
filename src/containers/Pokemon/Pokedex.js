@@ -31,7 +31,6 @@ class Pokedex extends Component
             <PokedexBuilder
                 pokemonStats={pokemonStats}
                 display={pokedexScreen}
-                isFetched={isFetched}
                 backButton={changePokedexDisplay}
                 nextButton={changePokedexDisplay}
             >
