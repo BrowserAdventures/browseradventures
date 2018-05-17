@@ -158,7 +158,7 @@ class ParticleSystem1 extends Component
             if(this.boundaryDetection(this.particles2[i]) && this.particles2[i].counter > 250) {
                 this.particles2.splice(i, 1)
                 this.particles2.push(new Particle(this.ctx, this.player))
-            }
+            }i
         }
     }
 
@@ -223,7 +223,6 @@ class ParticleSystem1 extends Component
         return(<Header
             title='Particle System 1'
             backButton={()=> this.props.history.push('/')}
-            nextButton={()=> this.props.history.push('/particlesystem2')}
         />)
     }
 }

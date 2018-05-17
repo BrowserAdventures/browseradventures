@@ -38,7 +38,7 @@ const pokemonReducer=(state = initialState, action)=>
         return{
             ...state,
             pokemons: pokemons,
-            displayedPokemons: pokemons.slice(0, 100),
+            displayedPokemons: pokemons.slice(0, 200),
             isFetched: false,
         }
 
@@ -47,7 +47,7 @@ const pokemonReducer=(state = initialState, action)=>
                 if(pokemon.name.includes(action.searchTerm.toLowerCase()))
                     return true
                 return false
-            }).slice(0, 100)
+            }).slice(0, 200)
 
         return{
             ...state,

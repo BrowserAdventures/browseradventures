@@ -1,20 +1,18 @@
-import React from 'react';
-import styled, {keyframes} from 'styled-components';
+import React from 'react'
+import styled, {keyframes} from 'styled-components'
 import {Wrapper} from '../../styles/styles'
 import monsterSprite from '../../../assets/imgs/sprites/monsterSprite.png'
 
+
 const loadingAnimation=(props)=>
 {
-    return(<Wrapper direction='column' alignContent='center'>
+    return(<Wrapper direction='column'>
         <Container>
-        <p>Loading...</p>
-
-        <Sprite />
+            <p>Loading...</p>
+            <Sprite />
         </Container>
     </Wrapper>)
 }
-
-
 
 const SpriteAnimationX = keyframes`
     from{
@@ -43,6 +41,8 @@ const Container = styled.div`
     background: rgba(255,255,255, 0.3);
     text-align: center;
     box-shadow: 2px 2px 0 0 rgba(0,0,0, 0.4);
+    width: 119px;
 `
 
-export default loadingAnimation;
+
+export default loadingAnimation

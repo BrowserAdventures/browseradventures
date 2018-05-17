@@ -15,7 +15,6 @@ import PokemonPage from './containers/Pokemon/PokemonPage'
 import Pokedex from './containers/Pokemon/Pokedex'
 
 import ParticleSystem1 from './containers/ParticleSystems/ParticleSystem1'
-import ParticleSystem2 from './containers/ParticleSystems/ParticleSystem2'
 
 
 class App extends Component
@@ -35,7 +34,6 @@ class App extends Component
                 <Route path="/pokedex" component={Pokedex} />
 
                 <Route path="/particlesystem1" component={ParticleSystem1} />
-                <Route path="/particlesystem2" component={ParticleSystem2} />
 
                 <Route path='/bird-poo' component={() => window.location = 'http://browseradventures.com/bird%20poo/'}/>
                 <Route path='/archer' component={() => window.location = 'http://browseradventures.com/archer/'}/>

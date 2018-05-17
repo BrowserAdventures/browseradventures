@@ -6,27 +6,31 @@ import {images} from '../../../assets/imgs/HeaderImages'
 
 const headerFlip=(props)=>
 {
-    const backButtonType = props.backButton && images['arrow.png']
+    const backButtonType = props.backButton ?
+    <Image
+        src={images['arrow.png']}
+        onClick={props.backButton}
+        alt=''
+    /> :
+    <span />
 
-    const nextButtonType = props.nextButton && images['arrow.png']
+    const nextButtonType = props.nextButton ?
+    <Image
+        src={images['arrow.png']}
+        onClick={props.nextButton}
+        nextButton={props.nextButton}
+        alt=''
+    /> :
+    <span />
 
 
     return(<Wrapper noMargin={props.noMargin}>
-        <Image
-            src={backButtonType}
-            onClick={props.backButton}
-            alt=''
-        />
+        {backButtonType}
         <Container>
             <div onClick={props.click}><h3>{props.instructions}</h3></div>
             <div><h3>{props.title}</h3></div>
         </Container>
-        <Image
-            src={nextButtonType}
-            onClick={props.nextButton}
-            nextButton={nextButtonType}
-            alt=''
-        />
+        {nextButtonType}
     </Wrapper>)
 }
 

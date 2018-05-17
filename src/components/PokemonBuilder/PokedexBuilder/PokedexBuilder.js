@@ -129,17 +129,22 @@ const Grid = styled.div`
 `
 
 const Bar = styled.div`
-    display: grid;
+    display: flex;
     height: 35px;
-    width: ${props=> props.width/1.25}%;
-    grid-template-columns: 75px 1fr;
-    background: rgba(255,255,255, 0.3);
     border: 1px solid black;
     text-align: center;
 
     div:nth-child(odd) {
-        background: rgba(0,255,0, 0.4);
+        background: rgba(0,255,0, 0.6);
         border-right: 1px solid black;
+        width: 75px;
+        align-content: center;
+    }
+
+    div:nth-child(even) {
+        background: rgba(255,255,255, 0.3);
+        border-right: 1px solid black;
+        width: ${props=> props.width/1.75}%;
     }
 `
 

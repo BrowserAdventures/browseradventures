@@ -6,24 +6,29 @@ import {images} from '../../../assets/imgs/HeaderImages'
 
 const header=(props)=>
 {
-    const backButtonType = props.backButton && images['arrow.png']
-
-    const nextButtonType = props.nextButton && images['arrow.png']
-
-
-    return(<Wrapper noMargin={props.noMargin}>
+    const backButtonType = props.backButton ?
         <Image
-            src={backButtonType}
+            src={images['arrow.png']}
             onClick={props.backButton}
             alt=''
-        />
-        <div onClick={props.click}><h3>{props.title}</h3></div>
+        /> :
+        <span />
+    ;
+
+    const nextButtonType = props.nextButton ?
         <Image
-            src={nextButtonType}
+            src={images['arrow.png']}
             onClick={props.nextButton}
-            nextButton={nextButtonType}
+            nextButton={props.nextButton}
             alt=''
-        />
+        /> :
+        <span />
+    ;
+
+    return(<Wrapper noMargin={props.noMargin}>
+        {backButtonType}
+        <div onClick={props.click}><h3>{props.title}</h3></div>
+        {nextButtonType}
     </Wrapper>)
 }
 
