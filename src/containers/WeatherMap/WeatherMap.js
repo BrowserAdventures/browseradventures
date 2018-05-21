@@ -2,10 +2,7 @@ import React, { Component, Fragment } from 'react'
 
 import HeaderFlip from '../../components/UI/Header/HeaderFlip'
 import Modal from '../../components/UI/Modal/Modal'
-import {
-    Wrapper, FlexBasis, MapContainer, Titleh3
-} from '../../components/styles/styles'
-
+import {Wrapper, FlexBasis, MapContainer, Titleh3} from '../../components/styles/styles'
 import GoogleMapBuilder from '../../components/MapBuilder/GoogleMapBuilder/GoogleMapBuilder'
 import WeatherForm from '../../components/MapBuilder/WeatherBuilder/WeatherForm'
 import WeatherDisplay from '../../components/MapBuilder/WeatherBuilder/WeatherDisplay'
@@ -105,4 +102,4 @@ class WeatherMap extends Component
 const API_KEY = 'ec552f529b65a49792e789951518a724'
 
 
-export default WeatherMap;
+export default WeatherMap

@@ -1,6 +1,6 @@
 import React, {Fragment} from "react"
 import styled, {keyframes} from 'styled-components'
-import Transition from "react-transition-group/Transition";
+import Transition from "react-transition-group/Transition"
 
 import Backdrop from './Backdrop/Backdrop'
 
@@ -80,4 +80,4 @@ const Container = styled.div`
     }
 `
 
-export default modal;
+export default modal

@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
 
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom'
 
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import thunk from 'redux-thunk'
 import rootReducer from './rootReducer'
 
 
@@ -23,4 +23,4 @@ const app = (<BrowserRouter>
 </BrowserRouter>)
 
 
-ReactDOM.render( app, document.getElementById( 'root' ) );
+ReactDOM.render( app, document.getElementById( 'root' ) )

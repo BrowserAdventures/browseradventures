@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const pictureBookBuilder=(props)=>
 {
@@ -89,4 +89,4 @@ const Container = styled.div`
 `
 
 
-export default pictureBookBuilder;
+export default pictureBookBuilder

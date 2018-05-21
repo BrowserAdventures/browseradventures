@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 import Toolbar from './Toolbar/Toolbar'
 
@@ -38,4 +38,4 @@ const Content = styled.main`
 
 `
 
-export default layout;
+export default layout

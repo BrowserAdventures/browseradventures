@@ -26,7 +26,7 @@ const bookPageReducer=(state = initialState, action)=>
             descriptions: action.descriptions
         }
 
-        default: return state;
+        default: return state
     }
 }
 
@@ -34,4 +34,4 @@ const bookPageReducer=(state = initialState, action)=>
 
 
 
-export default bookPageReducer;
+export default bookPageReducer

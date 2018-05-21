@@ -151,4 +151,4 @@ const Bar = styled.div`
 
 
 
-export default pokedexBuilder;
+export default pokedexBuilder

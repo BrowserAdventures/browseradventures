@@ -34,7 +34,7 @@ const pictureBookReducer=(state = initialState, action)=>
             books: action.books
         }
 
-        default: return state;
+        default: return state
     }
 }
 
@@ -42,4 +42,4 @@ const pictureBookReducer=(state = initialState, action)=>
 
 
 
-export default pictureBookReducer;
+export default pictureBookReducer

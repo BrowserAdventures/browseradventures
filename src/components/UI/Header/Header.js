@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components'
 
 import {images} from '../../../assets/imgs/HeaderImages'
@@ -59,4 +59,4 @@ const Image = styled.img`
 `
 
 
-export default header;
+export default header

@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, {keyframes} from 'styled-components';
+import React from 'react'
+import styled, {keyframes} from 'styled-components'
 import {Wrapper} from '../../styles/styles'
 
 
@@ -77,4 +77,4 @@ const Cube = styled.div`
 `
 
 
-export default pokemonCube;
+export default pokemonCube

@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 
 const bookPageForm=(props)=> (
@@ -33,4 +33,4 @@ const Form = styled.form`
 `
 
 
-export default bookPageForm;
+export default bookPageForm

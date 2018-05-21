@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
 import {images} from '../../assets/imgs/GameImages'
 import ParticleSystemHeader from '../ParticleSystems/ParticleSystemHeader'
@@ -62,4 +62,4 @@ class Games extends Component
 }
 
 
-export default Games;
+export default Games

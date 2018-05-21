@@ -98,7 +98,7 @@ class Player extends Circle
 }
 
 
-class ParticleSystem2 extends Component
+class ParticleSystemHeader extends Component
 {
     constructor()
     {
@@ -232,4 +232,4 @@ class ParticleSystem2 extends Component
 }
 
 
-export default ParticleSystem2;
+export default ParticleSystemHeader

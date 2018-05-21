@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 import NavItem from './NavItem/NavItem'
 
@@ -21,4 +21,4 @@ const Navigation = styled.ul`
     height: 100%;
 `
 
-export default navigation;
+export default navigation

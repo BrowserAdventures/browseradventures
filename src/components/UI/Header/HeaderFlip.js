@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components'
 
 import {images} from '../../../assets/imgs/HeaderImages'
@@ -100,4 +100,4 @@ const Container = styled.div`
 `
 
 
-export default headerFlip;
+export default headerFlip

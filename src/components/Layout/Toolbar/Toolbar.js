@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 import Navigation from '../Navigation/Navigation'
 import NavItem from '../Navigation/NavItem/NavItem'
@@ -29,4 +29,4 @@ const Header = styled.header`
     z-index: 90;
 `
 
-export default toolbar;
+export default toolbar

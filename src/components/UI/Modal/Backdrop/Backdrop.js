@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components'
 
 
@@ -19,4 +19,4 @@ const Wrapper = styled.div`
 
 
 
-export default backdrop;
+export default backdrop

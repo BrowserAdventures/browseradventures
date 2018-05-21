@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 import {Wrapper} from '../styles/styles'
 
 
@@ -65,4 +65,4 @@ const Container = styled.div`
 `
 
 
-export default homePageBuilder;
+export default homePageBuilder

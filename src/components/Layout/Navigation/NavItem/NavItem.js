@@ -1,6 +1,6 @@
-import React from 'react';
-import {NavLink} from 'react-router-dom';
-import styled from 'styled-components';
+import React from 'react'
+import {NavLink} from 'react-router-dom'
+import styled from 'styled-components'
 
 const navItem=(props)=> (<NavItem>
     <NavLink
@@ -42,4 +42,4 @@ const NavItem = styled.li`
 `
 
 
-export default navItem;
+export default navItem

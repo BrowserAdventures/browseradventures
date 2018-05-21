@@ -228,4 +228,4 @@ class ParticleSystem1 extends Component
 }
 
 
-export default ParticleSystem1;
+export default ParticleSystem1

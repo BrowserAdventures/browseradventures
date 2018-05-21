@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const bookPageBuilder=(props)=>
 {
@@ -93,4 +93,4 @@ const Container = styled.div`
 `
 
 
-export default bookPageBuilder;
+export default bookPageBuilder
